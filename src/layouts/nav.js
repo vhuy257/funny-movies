@@ -35,14 +35,14 @@ class NavWrapper extends Component {
         try {
             this.props.signInWithEmailAndPassword(this.state.email, this.state.password)
             .then(() => {
-            toast.success('You login successfully!!', {
-                position: toast.POSITION.BOTTOM_RIGHT
-            });
+              toast.success('You login successfully!!', {
+                  position: toast.POSITION.BOTTOM_RIGHT
+              });
             })
             .catch(error => {
-            toast.error(error.message, {
-                position: toast.POSITION.BOTTOM_RIGHT
-            });
+              toast.error(error.message, {
+                  position: toast.POSITION.BOTTOM_RIGHT
+              });
             })
         } catch (error) {}
     }
@@ -99,8 +99,9 @@ class NavWrapper extends Component {
                       Welcome, <span className="font-bold">{this.props.user.email}</span>
                     </span>
                     <button 
-                    onClick={this.props.signOut}
-                    className="ml-8 shadow bg-blue-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                      type="button"
+                      onClick={this.props.signOut}
+                      className="ml-8 shadow bg-blue-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
                       Logout
                     </button>
                   </>

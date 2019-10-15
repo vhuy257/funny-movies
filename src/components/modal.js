@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as modalActions from '../store/actions/alerts/';
 import {bindActionCreators} from 'redux';
+import { toast } from 'react-toastify';
+
 class Modal extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +13,6 @@ class Modal extends Component {
         }
         this.hideModalRegister = this.hideModalRegister.bind(this);
         this.changeField = this.changeField.bind(this);
-        this.signUp = this.signUp.bind(this);
     }
 
     changeField(e) {
@@ -20,8 +21,17 @@ class Modal extends Component {
         })
     }
 
-    signUp() {
-        
+    signUp(e) {
+        e.preventDefault();
+        this.props.createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then(() => {
+            this.props.signInWithEmailAndPassword(this.state.email, this.state.password);
+            this.hideModalRegister();
+        }).catch((error) => {
+            toast.error(error.message, {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+        })
     }
 
     hideModalRegister() {
@@ -44,7 +54,7 @@ class Modal extends Component {
                         </svg>
                     </div>
                     </div>
-                    <form className="" onSubmit={this.signUp}>
+                    <form className="" onSubmit={(e) => {this.signUp(e)}}>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                                 Username
@@ -55,7 +65,7 @@ class Modal extends Component {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                             name="email" 
                             type="text" 
-                            placeholder="Username" 
+                            placeholder="Email" 
                             required/>
                         </div>
                         <div className="mb-6">
@@ -68,7 +78,7 @@ class Modal extends Component {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" 
                             name="password"
                             type="password" 
-                            placeholder="******************" 
+                            placeholder="Password.." 
                             required/>
                         </div>
                         <div className="flex items-center flex-start">
