@@ -89,6 +89,13 @@ class NavWrapper extends Component {
                       <button className="ml-8 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
                         Login
                       </button>
+                      <button 
+                      type="button"
+                      onClick={this.showModalRegister}
+                      className="ml-8 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                      >
+                          Register
+                      </button>
                   </>
                 }
 
@@ -99,21 +106,21 @@ class NavWrapper extends Component {
                       Welcome, <span className="font-bold">{this.props.user.email}</span>
                     </span>
                     <button 
+                      onClick={() => {this.props.showMdMovies()}}
+                      type="button"
+                      className="ml-8 shadow bg-blue-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                      Share a movies
+                    </button>
+                    <button 
                       type="button"
                       onClick={this.props.signOut}
-                      className="ml-8 shadow bg-blue-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                      className="ml-8 shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
                       Logout
                     </button>
                   </>
                 }
               </div>
             </form>
-            <button 
-            onClick={this.showModalRegister}
-            className="ml-8 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-            >
-                Register
-            </button>
           </div>
         </nav>
         )
@@ -124,6 +131,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         showMd: modalActions.showModal,
         hideMd: modalActions.hideModal,
+        showMdMovies: modalActions.showModalMovies,
     }, dispatch);
 }
 

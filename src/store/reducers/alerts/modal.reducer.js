@@ -2,6 +2,7 @@ import * as Actions from '../../actions/index';
 
 const initialState = {
     open  : false,
+    openShareMovies: false,
 };
 
 const modals = function (state = initialState, action) {
@@ -20,6 +21,20 @@ const modals = function (state = initialState, action) {
                 ...state,
                 open: false
             };
+        }
+        case Actions.SHOW_MODAL_MOVIES:
+        {
+            return {
+                ...state,
+                openShareMovies: true,
+            }
+        }
+        case Actions.HIDE_MODAL_MOVIES:
+        {
+            return {
+                ...state,
+                openShareMovies: false,
+            }
         }
         default:
         {
