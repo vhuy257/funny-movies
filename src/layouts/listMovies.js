@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import firebase from 'firebase/app';
 import 'firebase/database'; 
 
-
 class ListMovies extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: []
+            list: null
         }
     }
 
@@ -47,8 +46,7 @@ class ListMovies extends Component {
                                 <div className="ml-8 content-_idVid">
                                     <span className="text-red-400 font-bold">{item._titleVid}</span>
                                     <h5 className="mt-2"><span className="font-bold">Share by: </span>{item._shareBy}</h5>
-                                    <h5 className="font-bold">Desciption:</h5>
-                                    <p className="whitespace-pre-wrap">
+                                    <p className="whitespace-pre-wrap h-48 max-h-full overflow-hidden">
                                         {item._descriptionVid}
                                     </p>
                                 </div>
