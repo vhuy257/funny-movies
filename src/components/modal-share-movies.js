@@ -47,9 +47,15 @@ class ModalShareMovies extends Component {
                 });
                 this.props.hideMd();
             })
-            .catch(error => console.log(error)); 
+            .catch(error => {
+                toast.error(`${error}`, {
+                    position: toast.POSITION.BOTTOM_RIGHT
+                });
+            }); 
         }).catch(err => {
-            console.error(err);
+            toast.error(`${err}`, {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
         });
     }
 
