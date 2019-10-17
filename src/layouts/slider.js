@@ -34,21 +34,26 @@ const content = [
 
 
 class SliderLayout extends React.Component {
+	
+	eventHandler(eventData) {
+		console.log(eventData);
+	}
+
     render() {
         return (
             <Slider autoplay={5000} className="slider-wrapper">
                 {content.map((item, index) => (
-                    <div
-                        key={index}
-                        className={`slider-content slide-${index + 1}`}
-                        style={{ background: `url('${item.image}') no-repeat top center` }}
-                    >
-                        <div className={`inner inner-item-${index + 1}`}>
-                            <h1 className="text-6xl font-bold">{item.title}</h1>
-                            <p className="text-2xl">{item.description}</p>
-                            <button className="ml-8 shadow bg-white focus:shadow-outline uppercase focus:outline-none text-black py-2 px-4 rounded">{item.button}</button>
-                        </div>
-                    </div>
+					<div
+						key={index}
+						className={`slider-content cursor-pointer slide-${index + 1}`}
+						style={{ background: `url('${item.image}') no-repeat top center` }}
+					>
+						<div className={`inner inner-item-${index + 1}`}>
+							<h1 className="text-6xl font-bold">{item.title}</h1>
+							<p className="text-2xl">{item.description}</p>
+							<button className="ml-8 bg-white focus:shadow-outline uppercase focus:outline-none text-black py-2 px-2" type="button">{item.button}</button>
+						</div>
+					</div>
                 ))}
 			</Slider>
         )

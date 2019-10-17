@@ -19,7 +19,7 @@ class App extends Component {
         <SliderLayout/>
         <div className="container mx-auto mt-10">
           <div className="flex mb-4">
-            <ListMovies/>
+            {/* <ListMovies/> */}
           </div>
         </div>
         <ModalShareMovie {...this.props}/>
