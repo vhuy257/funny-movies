@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Cookie&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
 
+.modal {
+    z-index: 99;
+}
+
 .wrapper {
     max-width: 1335px;
     box-sizing: border-box;
