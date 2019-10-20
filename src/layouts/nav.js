@@ -57,18 +57,24 @@ class NavWrapper extends Component {
                 <span className="font-semibold text-xl tracking-tight">Hommie</span>
               </div>
               <div className="w-full block lg:flex lg:items-center lg:w-auto">
+                <div className="md:flex md:items-center">
+                  Cart    
+                </div>
                 <form onSubmit={(e) => this.login(e)}>
                   <div className="md:flex md:items-center">
                     {!this.props.user && 
                       <>
-                          <button className="ml-8 focus:shadow-outline focus:outline-none py-1 px-2" type="submit">
+                          <button 
+                            className="ml-8 focus:shadow-outline focus:outline-none py-1 px-2" 
+                            type="submit"
+                          >
                             Login
                           </button>
                           /
                           <button 
-                          type="button"
-                          onClick={this.showModalRegister}
-                          className="ml-2 focus:shadow-outline focus:outline-none py-1 px-2"
+                            type="button"
+                            onClick={this.showModalRegister}
+                            className="ml-2 focus:shadow-outline focus:outline-none py-1 px-2"
                           >
                               Register
                           </button>

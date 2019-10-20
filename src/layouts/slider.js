@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from 'react-animated-slider';
+import Swiper from 'react-id-swiper';
 const content = [
 	{
 		title: 'Vulputate Mollis Ultricies Fermentum Parturient',
@@ -41,7 +41,7 @@ class SliderLayout extends React.Component {
 
     render() {
         return (
-            <Slider autoplay={5000} className="slider-wrapper">
+            <Swiper className="slider-wrapper">
                 {content.map((item, index) => (
 					<div
 						key={index}
@@ -51,11 +51,11 @@ class SliderLayout extends React.Component {
 						<div className={`inner inner-item-${index + 1}`}>
 							<h1 className="text-6xl font-bold">{item.title}</h1>
 							<p className="text-2xl">{item.description}</p>
-							<button className="ml-8 bg-white focus:shadow-outline uppercase focus:outline-none text-black py-2 px-2" type="button">{item.button}</button>
+							<button className="mx-auto bg-white focus:shadow-outline uppercase focus:outline-none text-black py-2 px-2" type="button">{item.button}</button>
 						</div>
 					</div>
                 ))}
-			</Slider>
+			</Swiper>
         )
     }
 }
