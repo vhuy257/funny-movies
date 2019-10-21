@@ -3,6 +3,28 @@ import {connect} from 'react-redux';
 import * as modalActions from '../store/actions/alerts/';
 import {bindActionCreators} from 'redux';
 import { toast } from 'react-toastify';
+import Lottie from 'react-lottie';
+import cartData from '../animated-icons/shopping-bag/shopping-bag.json';
+import wishlistData from '../animated-icons/heart/heart.json';
+import SearchBar from '../layouts/search-bar';
+
+const cartOptions = {
+  loop: false,
+  autoplay: false,
+  animationData: cartData,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+}
+
+const wishListOptions = {
+  loop: false,
+  autoplay: false,
+  animationData: wishlistData,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+}
 
 class NavWrapper extends Component {
     constructor(props) {
@@ -14,8 +36,8 @@ class NavWrapper extends Component {
           password  : '',
         }
         this.showModalRegister = this.showModalRegister.bind(this);
-      }
-      
+    }
+    
     changeField(e) {
         this.setState({
             [e.target.name]: e.target.value
@@ -47,19 +69,19 @@ class NavWrapper extends Component {
         } catch (error) {}
     }
 
-    render() {
-        return (
+    render() {    
+      return (
         <header className="">
             <div className="container mx-auto">
-            <nav className="flex items-center justify-between flex-wrap  p-3">
+            <nav className="flex content-center items-center justify-between flex-wrap  p-3">
               <div className="flex items-center flex-shrink-0 mr-6">
                 <svg className="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
                 <span className="font-semibold text-xl tracking-tight">Hommie</span>
               </div>
               <div className="w-full block lg:flex lg:items-center lg:w-auto">
-                <div className="md:flex md:items-center">
-                  Cart    
-                </div>
+                <SearchBar/>
+              </div>
+              <div className="w-full block lg:flex lg:items-center lg:w-auto">
                 <form onSubmit={(e) => this.login(e)}>
                   <div className="md:flex md:items-center">
                     {!this.props.user && 
@@ -96,11 +118,32 @@ class NavWrapper extends Component {
                     }
                   </div>
                 </form>
+                <div className="ml-10 md:flex cart-item">
+                  <Lottie 
+                    options={
+                      wishListOptions
+                    }
+                    height={20}
+                    width={20}
+                  />
+                </div>
+                <div className="ml-4 md:flex cart-item">
+                  <Lottie 
+                    options={
+                      cartOptions
+                    }
+                    height={20}
+                    width={20}
+                  />
+                  <span className="item-in-cart mx-2 bg-orange-400 text-xs px-2 py-1 text-white text-center leading-normal">20</span>
+                  /
+                  <span className="leading-normal font-bold text-xs px-2 py-1">$40</span>
+                </div>
               </div>
             </nav>
             </div>
         </header>
-        )
+      )
     }
 }
 
