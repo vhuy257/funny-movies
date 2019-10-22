@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import {providers, firebaseAppAuth} from './firebase-init';
 import Modal from './components/modal';
-import ModalShareMovie from './components/modal-share-movies';
-import SliderLayout from './layouts/slider';
+import HomePage from './layouts/index';
 import Nav from './layouts/nav';
 import TopHeader from './layouts/top-header';
 import './styles/styles.scss';
@@ -17,12 +16,7 @@ class App extends Component {
       <>
         <TopHeader/>
         <Nav {...this.props}/>
-        <SliderLayout/>
-        <div className="container mx-auto mt-10">
-          <div className="flex mb-4">
-          </div>
-        </div>
-        <ModalShareMovie {...this.props}/>
+        <HomePage/>
         <Modal {...this.props}/>
         <ToastContainer/>
       </>
