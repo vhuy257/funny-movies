@@ -395,3 +395,24 @@
         top: 50%;
     }
 }
+
+.image-element-class {
+    width: 300px;
+    padding: 5px;
+    .inner-img {
+        position: relative;
+        overflow: hidden;
+    }
+    &:hover img {
+        transform: scale(1);
+    }
+    img {
+        cursor: pointer;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.35s;
+        opacity: 0.8;
+        transform: scale(1.11);
+    }
+}
