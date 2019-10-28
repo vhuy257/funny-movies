@@ -6,12 +6,13 @@ import openJson from '../animated-icons/open-sign/open-sign.json';
 import shieldJson from '../animated-icons/shield/shield.json';
 import refreshJson from '../animated-icons/refresh-wait/refresh-wait.json';
 import Masonry from 'react-masonry-component';
+import SliderProduct from './products/slider-product';
 
 const masonryOptions = {
     transitionDuration: 0
-};
+}; 
 
-const imagesLoadedOptions = { background: '.my-bg-image-el' }
+const imagesLoadedOptions = { background: '.my-bg-image-el' };
 
 const shipping = {
     autoplay: false,
@@ -182,19 +183,7 @@ class HomePage extends React.Component {
                                 </div>
                             </li>                                                            
                         </Masonry>
-                        
-                        <div className="special-wrapper container flex">
-                                <div className="text-center w-full my-10">
-                                    <h2 className="text-lg uppercase font-bold text-teal-600">Special</h2>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <div className="product-item">
-
-                                        </div>
-                                    </li>
-                                </ul>
-                        </div>
+                        <SliderProduct/>
                 </div>
             </>
         )

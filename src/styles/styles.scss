@@ -416,3 +416,10 @@
         transform: scale(1.11);
     }
 }
+
+.special-wrapper ul li {
+    max-width: 25%;
+    .product-item img {
+        max-width: 200px;
+    }    
+}
