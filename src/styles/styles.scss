@@ -423,3 +423,12 @@
         max-width: 200px;
     }    
 }
+
+.parralax_section {
+    background: url('/images/parallax-background.jpg') no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+}
