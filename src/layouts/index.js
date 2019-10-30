@@ -185,10 +185,10 @@ class HomePage extends React.Component {
                         </Masonry>
                         <SliderProduct/>
                 </div>
-                <div className="parralax_section flex justify-center items-center mb-4">
+                <div className="parralax_section mt-4 flex justify-center items-center mb-4">
                     <figure className="text-white flex">
-                        <input type="text" placeholder="Your Email" className="placeholder-white border-0 border-b w-56 bg-transparent pl-2 outline-none mr-2"/>
-                        <button className="bg-white text-black text-center px-5 py-1">
+                        <input type="text" placeholder="Your Email" className="placeholder-white border-0 border-b w-56 bg-transparent pl-1 outline-none mr-2"/>
+                        <button className="bg-white hover:bg-teal-500 hover:text-white text-black text-center px-5 py-1">
                             Subscribe
                         </button>
                     </figure>

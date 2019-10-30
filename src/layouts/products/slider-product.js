@@ -51,12 +51,28 @@ class SliderProduct extends Component {
                     <h2 className="text-lg uppercase font-bold text-teal-600">Special</h2>
                 </div>
                 <ul className="flex w-full flex-auto flex-wrap">
-                    {dataProduct.map(item => (
-                        <li className="px-5 mb-10">
+                    {dataProduct.map((item, key) => (
+                        <li 
+                        key={key}
+                        className="px-5 mb-10 border-grey border m-1 product-item-wrapper">
                             <div className="product-item text-center">
                                 <img alt={item.name} src={`./images/product/${item.image}`} className="mx-auto" />
                                 <h2 className="mt-4">{item.name}</h2>
                                 <h4 className="font-bold text-teal-500">{item.price}</h4>
+                            </div>
+                            <div className="product-toolbars text-center flex flex-col items-center justify-center">
+                                <button className="quick-view outline-none mb-2 items-center flex tooltip tooltip-right">
+                                    <i class="icon-magnifier icons h4 mx-3 d-block"></i>
+                                    <span className="text-tooltip text-xs text-white whitespace-no-wrap bg-teal-500 p-1">Quick view</span>
+                                </button>
+                                <button className="addto-wishlist outline-none mb-2 flex items-center tooltip tooltip-right">
+                                    <i class="icon-heart icons h4 mx-3 d-block"></i>
+                                    <span className="text-tooltip text-xs text-white whitespace-no-wrap bg-teal-500 p-1">Add to wishlist</span>
+                                </button>
+                                <button className="add-to-cart outline-none flex mb-2 items-center tooltip tooltip-right">
+                                    <i class="icon-basket icons h4 mx-3 d-block"></i>
+                                    <span className="text-tooltip text-xs text-white whitespace-no-wrap bg-teal-500 p-1">Add to cart</span>
+                                </button>
                             </div>
                         </li>
                     ))}

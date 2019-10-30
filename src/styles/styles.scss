@@ -1,3 +1,4 @@
+@import 'simple-line-icons';
 @import url('https://fonts.googleapis.com/css?family=Cookie&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
 
@@ -418,7 +419,8 @@
 }
 
 .special-wrapper ul li {
-    max-width: 25%;
+    max-width: calc(25% - 0.5rem);
+    cursor: pointer;
     .product-item img {
         max-width: 200px;
     }    
@@ -431,4 +433,48 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 350px;
+}
+
+.product-item-wrapper {
+    position: relative;
+    &:hover .product-toolbars {
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+.product-toolbars {
+    position: absolute;
+    z-index: 9;
+    right: 0;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+    button i {
+        width: 40px;
+        text-align: center;
+    }
+}
+
+.tooltip {
+    position: relative;
+    .text-tooltip {
+        position: relative;
+        right: 0;
+        left: 0;
+        -webkit-transition: all 0.35s;
+        transition: all 0.35s;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
+    }
+    &:hover .text-tooltip {
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
 }

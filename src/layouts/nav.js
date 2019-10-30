@@ -3,28 +3,7 @@ import {connect} from 'react-redux';
 import * as modalActions from '../store/actions/alerts/';
 import {bindActionCreators} from 'redux';
 import { toast } from 'react-toastify';
-import Lottie from 'react-lottie';
-import cartData from '../animated-icons/shopping-bag/shopping-bag.json';
-import wishlistData from '../animated-icons/heart/heart.json';
 import SearchBar from '../layouts/search-bar';
-
-const cartOptions = {
-  loop: false,
-  autoplay: false,
-  animationData: cartData,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice'
-  }
-}
-
-const wishListOptions = {
-  loop: false,
-  autoplay: false,
-  animationData: wishlistData,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice'
-  }
-}
 
 class NavWrapper extends Component {
     constructor(props) {
@@ -119,22 +98,10 @@ class NavWrapper extends Component {
                   </div>
                 </form>
                 <div className="ml-10 md:flex cart-item">
-                  <Lottie 
-                    options={
-                      wishListOptions
-                    }
-                    height={20}
-                    width={20}
-                  />
+                <i className="icon-heart icons"></i>
                 </div>
-                <div className="ml-4 md:flex cart-item">
-                  <Lottie 
-                    options={
-                      cartOptions
-                    }
-                    height={20}
-                    width={20}
-                  />
+                <div className="ml-4 md:flex items-center cart-item">
+                  <i class="icon-basket icons"></i>
                   <span className="item-in-cart mx-2 bg-orange-400 text-xs px-2 py-1 text-white text-center leading-normal">20</span>
                   /
                   <span className="leading-normal font-bold text-xs px-2 py-1">$40</span>
