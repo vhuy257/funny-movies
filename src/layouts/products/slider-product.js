@@ -60,7 +60,7 @@ class SliderProduct extends Component {
                                 <h2 className="mt-4">{item.name}</h2>
                                 <h4 className="font-bold text-teal-500">{item.price}</h4>
                             </div>
-                            <div className="product-toolbars text-center flex flex-col items-center justify-center">
+                            <div className="product-toolbars text-center flex flex-col items-center justify-start pt-5">
                                 <button className="quick-view outline-none mb-2 items-center flex tooltip tooltip-right">
                                     <i class="icon-magnifier icons h4 mx-3 d-block"></i>
                                     <span className="text-tooltip text-xs text-white whitespace-no-wrap bg-teal-500 p-1">Quick view</span>

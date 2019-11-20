@@ -101,7 +101,7 @@ class NavWrapper extends Component {
                 <i className="icon-heart icons"></i>
                 </div>
                 <div className="ml-4 md:flex items-center cart-item">
-                  <i class="icon-basket icons"></i>
+                  <i className="icon-basket icons"></i>
                   <span className="item-in-cart mx-2 bg-orange-400 text-xs px-2 py-1 text-white text-center leading-normal">20</span>
                   /
                   <span className="leading-normal font-bold text-xs px-2 py-1">$40</span>

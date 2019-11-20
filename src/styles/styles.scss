@@ -461,16 +461,18 @@
 .tooltip {
     position: relative;
     .text-tooltip {
-        position: relative;
-        right: 0;
-        left: 0;
+        position: absolute;
+        top: -5px;
+        right: -20px;
+        opacity: 0;
+        width: 120px;
         -webkit-transition: all 0.35s;
         transition: all 0.35s;
         -webkit-transform: translate3d(100%,0,0);
         transform: translate3d(100%,0,0);
     }
     &:hover .text-tooltip {
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
+        right: 0;
+        opacity: 1;
     }
 }
