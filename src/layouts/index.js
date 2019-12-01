@@ -7,6 +7,7 @@ import shieldJson from '../animated-icons/shield/shield.json';
 import refreshJson from '../animated-icons/refresh-wait/refresh-wait.json';
 import Masonry from 'react-masonry-component';
 import SliderProduct from './products/slider-product';
+import Footer from './footer';
 
 const masonryOptions = {
     transitionDuration: 0
@@ -193,6 +194,8 @@ class HomePage extends React.Component {
                         </button>
                     </figure>
                 </div>
+
+                <Footer/>
             </>
         )
     }
