@@ -34,11 +34,6 @@ const content = [
 
 
 class SliderLayout extends React.Component {
-	
-	eventHandler(eventData) {
-		console.log(eventData);
-	}
-
     render() {
         return (
             <Swiper className="slider-wrapper">
@@ -51,7 +46,7 @@ class SliderLayout extends React.Component {
 						<div className={`inner inner-item-${index + 1}`}>
 							<h1 className="text-6xl font-bold">{item.title}</h1>
 							<p className="text-2xl">{item.description}</p>
-							<button className="mx-auto bg-white focus:shadow-outline uppercase focus:outline-none text-black py-2 px-2" type="button">{item.button}</button>
+							<button className="mx-auto bg-white focus:shadow-outline shadow focus:outline-none text-black py-2 px-2" type="button">{item.button}</button>
 						</div>
 					</div>
                 ))}

@@ -1,6 +1,10 @@
 @import 'simple-line-icons';
 @import url('https://fonts.googleapis.com/css?family=Cookie&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;    
+}
 
 .modal {
     z-index: 99;
@@ -397,6 +401,24 @@
     }
 }
 
+.navigation {
+    position: fixed;
+    top: 32px;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-fixed {
+    .navigation {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        z-index: 99;
+        box-shadow: 1px -1px 6px 2px #d8d8d8;
+    }
+}
+
 .image-element-class {
     width: 300px;
     padding: 5px;
@@ -404,8 +426,13 @@
         position: relative;
         overflow: hidden;
     }
-    &:hover img {
-        transform: scale(1);
+    &:hover {
+        img {
+            transform: scale(1);
+        }
+        figure {
+            opacity: 1;
+        }
     }
     img {
         cursor: pointer;
@@ -416,10 +443,23 @@
         opacity: 0.8;
         transform: scale(1.11);
     }
+    figure {
+        cursor: pointer;
+        font-family: 'Cookie', cursive;
+        font-size: 24px;
+        position: absolute;
+        color: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #000000a8;
+        padding: 4px;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
 }
 
 .special-wrapper ul li {
-    max-width: calc(25% - 0.5rem);
     cursor: pointer;
     .product-item img {
         max-width: 200px;
@@ -432,7 +472,23 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 350px;
+    height: 550px;
+    position: relative;
+    &::after {
+        content: '';
+        background: #000;
+        opacity: 0.6;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    figure, 
+    h2 {
+        z-index: 9;
+        font-family: 'Cookie';
+    }
 }
 
 .product-item-wrapper {
@@ -447,7 +503,7 @@
 .product-toolbars {
     position: absolute;
     z-index: 9;
-    right: 0;
+    right: 8px;
     opacity: 0;
     top: 0;
     bottom: 0;
@@ -479,4 +535,24 @@
 
 .container {
     margin: 0 auto;
+}
+
+.list--post {
+    .date--post {
+        top: -12px;
+    }
+}
+
+.title-sections {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 40px;
+        background: orange;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
 }

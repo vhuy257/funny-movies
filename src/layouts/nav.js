@@ -17,6 +17,20 @@ class NavWrapper extends Component {
         this.showModalRegister = this.showModalRegister.bind(this);
     }
     
+    componentDidMount() {
+      window.onscroll = function() {
+        if(window.pageYOffset > 150) {
+          this.document.body.classList.add("nav-fixed");
+        } else {
+          this.document.body.classList.remove("nav-fixed");
+        }
+      };
+    }
+
+    componentWillUnmount() {
+      window.onscroll = null;
+    }
+
     changeField(e) {
         this.setState({
             [e.target.name]: e.target.value
@@ -50,7 +64,7 @@ class NavWrapper extends Component {
 
     render() {    
       return (
-        <header className="">
+        <header className="navigation">
             <div className="container mx-auto">
             <nav className="flex content-center items-center justify-between flex-wrap  p-3">
               <div className="flex items-center flex-shrink-0 mr-6">
