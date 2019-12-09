@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import * as modalActions from '../store/actions/alerts/';
 import {bindActionCreators} from 'redux';
 import { toast } from 'react-toastify';
-import SearchBar from '../layouts/search-bar';
+import Menu from './menu';
 
 class NavWrapper extends Component {
     constructor(props) {
@@ -44,6 +44,10 @@ class NavWrapper extends Component {
     hideModalRegister() {
         this.props.hideMd();
     }
+    
+    showFormSearch() {      
+      document.body.classList.add('show-search--form');
+    }
 
     login(e) {
         e.preventDefault();
@@ -72,53 +76,22 @@ class NavWrapper extends Component {
                 <span className="font-semibold text-xl tracking-tight">Hommie</span>
               </div>
               <div className="w-full block lg:flex lg:items-center lg:w-auto">
-                <SearchBar/>
+                <Menu/>
               </div>
               <div className="w-full block lg:flex lg:items-center lg:w-auto">
-                <form onSubmit={(e) => this.login(e)}>
-                  <div className="md:flex md:items-center">
-                    {!this.props.user && 
-                      <>
-                          <button 
-                            className="ml-8 focus:shadow-outline focus:outline-none py-1 px-2" 
-                            type="submit"
-                          >
-                            Login
-                          </button>
-                          /
-                          <button 
-                            type="button"
-                            onClick={this.showModalRegister}
-                            className="ml-2 focus:shadow-outline focus:outline-none py-1 px-2"
-                          >
-                              Register
-                          </button>
-                      </>
-                    }
-                    {
-                      this.props.user &&
-                      <>
-                        <span className="">
-                          Welcome, <span className="font-bold">{this.props.user.email}</span>
-                        </span>
-                        <button 
-                          type="button"
-                          onClick={this.props.signOut}
-                          className="ml-2 hover:bg-red-400 hover:text-white focus:shadow-outline focus:outline-none text-black py-1 px-2">
-                          Logout
-                        </button>
-                      </>
-                    }
-                  </div>
-                </form>
-                <div className="ml-10 md:flex cart-item">
-                <i className="icon-heart icons"></i>
+                <div className="ml-4 md:flex items-center cart-item">
+                  <button className="focus:outline-none" onClick={() => {this.showFormSearch()}}><i className="icon-magnifier icons"></i></button>  
                 </div>
                 <div className="ml-4 md:flex items-center cart-item">
-                  <i className="icon-basket icons"></i>
-                  <span className="item-in-cart mx-2 bg-orange-400 text-xs px-2 py-1 text-white text-center leading-normal">20</span>
-                  /
-                  <span className="leading-normal font-bold text-xs px-2 py-1">$40</span>
+                  <button className="focus:outline-none"><i className="icon-heart icons"></i></button>
+                </div>
+                <div className="ml-4 md:flex items-center cart-item">
+                  <button className="focus:outline-none">
+                    <i className="icon-basket icons"></i>
+                    <span className="item-in-cart mx-2 bg-orange-400 text-sm px-2 py-1 text-white text-center leading-normal">20</span>
+                    /
+                    <span className="leading-normal font-bold text-sm px-2 py-1">$40</span>
+                  </button>
                 </div>
               </div>
             </nav>

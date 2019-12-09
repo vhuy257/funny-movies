@@ -8,7 +8,7 @@ import TopHeader from './layouts/top-header';
 import './styles/styles.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-
+import Search from './layouts/search-bar';
 
 class App extends Component {
   render() {
@@ -17,6 +17,7 @@ class App extends Component {
         <TopHeader/>
         <Nav {...this.props}/>
         <HomePage/>
+        <Search />
         <Modal {...this.props}/>
         <ToastContainer/>
       </>

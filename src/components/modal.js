@@ -43,7 +43,7 @@ class Modal extends Component {
             <>
             <div className={this.props.showModal ? "modal fixed w-full h-full top-0 left-0 flex items-center justify-center" : "modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center"}>
                 <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
-                <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+                <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto shadow-lg z-50 overflow-y-auto">
                 <div className="modal-content py-4 text-left px-6">
                     <div className="flex justify-between items-center pb-3">
                     <p className="text-2xl font-bold">Register user</p>
@@ -61,7 +61,7 @@ class Modal extends Component {
                             <input 
                             value={this.state.email}
                             onChange={(e) => {this.changeField(e)}}
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                            className="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                             name="email" 
                             type="text" 
                             placeholder="Email" 
@@ -74,14 +74,14 @@ class Modal extends Component {
                             <input 
                             value={this.state.password}
                             onChange={(e) => {this.changeField(e)}}
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" 
+                            className="shadow appearance-none border w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" 
                             name="password"
                             type="password" 
                             placeholder="Password.." 
                             required/>
                         </div>
                         <div className="flex items-center flex-start">
-                            <button className="mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            <button className="mr-2 bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline" type="submit">
                                 Sign Up
                             </button>
                         </div>
