@@ -551,7 +551,6 @@ body {
 }
 
 .menu-wrapper {
-    position: relative;
     z-index: 10;
     li {
         color: #333;
@@ -571,8 +570,6 @@ body {
         .dropdown-menu-child {
             position: absolute;
             top: 100%;
-            width: 100%;
-            min-width: 600px;
             left: 0;
             right: 0;
             background: #fff;
@@ -588,7 +585,7 @@ body {
         &:hover .dropdown-menu-child {
             opacity: 1;
             visibility: visible;
-            transform: translateY(15px);
+            transform: translateY(0);
         }
     }
 }

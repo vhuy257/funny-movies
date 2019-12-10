@@ -68,7 +68,7 @@ class NavWrapper extends Component {
 
     render() {    
       return (
-        <header className="navigation">
+        <header className="navigation relative">
             <div className="container mx-auto">
             <nav className="flex content-center items-center justify-between flex-wrap  p-3">
               <div className="flex items-center flex-shrink-0 mr-6">
