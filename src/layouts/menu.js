@@ -101,7 +101,7 @@ const Menu = () => {
                                 </li>
                             </ul>
                             <div className="image-menu w-1/5">
-                                <img src="./images/menu-marketing-image.jpg" alt="Image categories" className="object-cover w-full h-full"/>
+                                <img src="./images/menu-marketing-image.jpg" alt="" className="object-cover w-full h-full"/>
                             </div>
                         </div>
                     </div>
