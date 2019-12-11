@@ -14,7 +14,7 @@ const Menu = () => {
                                     <span className="font-bold text-600">Special</span>
                                 </li>
                                 <li className="m-2">
-                                    Women
+                                    <Link to="/modus-create">Women</Link>
                                 </li>
                                 <li className="m-2">
                                     Men

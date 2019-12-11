@@ -15,6 +15,8 @@ import './styles/styles.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import Search from './layouts/search-bar';
+import About from './screens/About';
+import ProductDetail from './screens/Product/Detail';
 
 class App extends Component {
   render() {
@@ -23,12 +25,16 @@ class App extends Component {
         <TopHeader/>
         <Nav {...this.props}/>
         <Switch>
-          <Route exact path="/">
+          <Route 
+            exact
+            path="/">
             <HomePage/>
           </Route>
-          <Route path="/about">
-            <About />
+          <Route 
+            path="/about">
+            <About/>
           </Route>
+          <Route path="/:id" children={<ProductDetail/>}/>
         </Switch>
         <Footer/>
         <Search />
@@ -37,14 +43,6 @@ class App extends Component {
       </Router>
     );
   }
-}
-
-function About() {
-  return (
-    <div>
-        <h2>About</h2>
-    </div>
-  )
 }
 
 export default withFirebaseAuth({
