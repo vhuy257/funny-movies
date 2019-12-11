@@ -1,6 +1,7 @@
 const MenuList = [
     {
         title: 'Products',
+        link: '/products',
         childItems: [
             {
                 title: 'Special',
@@ -15,6 +16,61 @@ const MenuList = [
             },
             {
                 title: 'News',
+                listItems: [
+                    {name: 'Women'},
+                    {name: 'Men'},
+                    {name: 'Watches'},
+                    {name: 'Bags'},
+                    {name: 'Shoes'},
+                    {name: 'Perfume332'}
+                ]
+            },
+            {
+                title: 'Hot',
+                listItems: [
+                    {name: 'Women'},
+                    {name: 'Men'},
+                    {name: 'Watches'},
+                    {name: 'Bags'},
+                    {name: 'Shoes'},
+                    {name: 'Perfume332'}
+                ]
+            },
+            {
+                title: 'Sale',
+                listItems: [
+                    {name: 'Women'},
+                    {name: 'Men'},
+                    {name: 'Watches'},
+                    {name: 'Bags'},
+                    {name: 'Shoes'},
+                    {name: 'Perfume332'}
+                ]
+            },
+            {
+                title: 'Sale',
+                listItems: [
+                    {name: 'Women'},
+                    {name: 'Men'},
+                    {name: 'Watches'},
+                    {name: 'Bags'},
+                    {name: 'Shoes'},
+                    {name: 'Perfume332'}
+                ]
+            },
+            {
+                title: 'Sale',
+                listItems: [
+                    {name: 'Women'},
+                    {name: 'Men'},
+                    {name: 'Watches'},
+                    {name: 'Bags'},
+                    {name: 'Shoes'},
+                    {name: 'Perfume332'}
+                ]
+            },
+            {
+                title: 'Sale',
                 listItems: [
                     {name: 'Women'},
                     {name: 'Men'},

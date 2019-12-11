@@ -16,24 +16,27 @@ import { ToastContainer } from 'react-toastify';
 import Search from './layouts/search-bar';
 import About from './screens/About';
 import ProductDetail from './screens/Product/Detail';
+import ProductList from './screens/Product/List';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <Header {...this.props}/>
+        
         <Switch>
-          <Route 
-            exact
-            path="/">
+          <Route exact path="/">
             <HomePage/>
           </Route>
-          <Route 
-            path="/about">
+          <Route path="/about">
             <About/>
+          </Route>
+          <Route exact path="/products">
+            <ProductList/>
           </Route>
           <Route path="/:id" children={<ProductDetail/>}/>
         </Switch>
+
         <Footer/>
         <Search />
         <Modal {...this.props}/>

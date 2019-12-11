@@ -565,7 +565,9 @@ body {
             font-family: 'simple-line-icons';
             margin-left: 5px;
             display: inline-block;
-            vertical-align: middle;            
+            vertical-align: middle;    
+            font-size: 12px;   
+            font-weight: bold;     
         }
         .dropdown-menu-child {
             position: absolute;
@@ -614,5 +616,21 @@ body.show-search--form {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+}
+
+.breadcrumbs {
+    span {
+        &::after {
+            content: "\e606";
+            font-family: 'simple-line-icons';
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+            font-size: 12px;
+        }
+        &:last-child::after{
+            display: none;
+        }
     }
 }

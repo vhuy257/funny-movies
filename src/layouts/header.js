@@ -70,7 +70,7 @@ class Header extends Component {
     render() {    
       return (
         <header className="navigation relative">
-            <div className="bg-teal-500 p-1">
+            <div className="bg-teal-600 p-1">
                 <div className="container m-auto pl-3 pr-3 flex justify-between flex-wrap">
                     <div className="w-1/2 py-1">
                         <span className="text-white">Phone number: (84) 7562 561</span>
