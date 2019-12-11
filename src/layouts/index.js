@@ -10,6 +10,7 @@ const masonryOptions = {
 const imagesLoadedOptions = { background: '.my-bg-image-el' };
 
 class HomePage extends React.Component {
+    
     render() {
         return (
             <>

@@ -9,8 +9,7 @@ import {
 import Footer from './layouts/footer';
 import Modal from './components/modal';
 import HomePage from './layouts/index';
-import Nav from './layouts/nav';
-import TopHeader from './layouts/top-header';
+import Header from './layouts/header';
 import './styles/styles.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
@@ -22,8 +21,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <TopHeader/>
-        <Nav {...this.props}/>
+        <Header {...this.props}/>
         <Switch>
           <Route 
             exact
