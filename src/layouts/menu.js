@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Menu = () => {
     return (
@@ -107,7 +108,7 @@ const Menu = () => {
                     </div>
                 </li>
                 <li className="mx-5">
-                    <span>About</span>
+                    <Link to="/about"><span>About</span></Link>
                 </li>
                 <li className="mx-5">
                     <span>Service</span>

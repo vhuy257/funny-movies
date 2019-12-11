@@ -3,7 +3,6 @@ import SliderLayout from './slider';
 import Masonry from 'react-masonry-component';
 import SliderProduct from './products/slider-product';
 import Blog from '../components/blog';
-import Footer from './footer';
 import Partner from './partner';
 const masonryOptions = {
     transitionDuration: 0
@@ -112,7 +111,6 @@ class HomePage extends React.Component {
                 </div>
                 <Blog/>
                 <Partner/>
-                <Footer/>
             </>
         )
     }

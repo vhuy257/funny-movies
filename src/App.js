@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import {providers, firebaseAppAuth} from './firebase-init';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Footer from './layouts/footer';
 import Modal from './components/modal';
 import HomePage from './layouts/index';
 import Nav from './layouts/nav';
@@ -13,16 +19,32 @@ import Search from './layouts/search-bar';
 class App extends Component {
   render() {
     return (
-      <>
+      <Router>
         <TopHeader/>
         <Nav {...this.props}/>
-        <HomePage/>
+        <Switch>
+          <Route exact path="/">
+            <HomePage/>
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Switch>
+        <Footer/>
         <Search />
         <Modal {...this.props}/>
         <ToastContainer/>
-      </>
+      </Router>
     );
   }
+}
+
+function About() {
+  return (
+    <div>
+        <h2>About</h2>
+    </div>
+  )
 }
 
 export default withFirebaseAuth({
