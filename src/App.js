@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Footer from './layouts/footer';
 import Modal from './components/modal';
-import HomePage from './layouts/index';
+import HomePage from './screens/Home/index';
 import Header from './layouts/header';
 import './styles/styles.scss';
 import 'react-toastify/dist/ReactToastify.css';

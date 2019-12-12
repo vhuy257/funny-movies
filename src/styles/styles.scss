@@ -488,6 +488,7 @@ body {
     position: relative;
     &:hover .product-toolbars {
         opacity: 1;
+        visibility: visible;
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
@@ -501,6 +502,7 @@ body {
     top: 0;
     bottom: 0;
     width: 40px;
+    visibility: hidden;
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
     -webkit-transform: translate3d(100%,0,0);
@@ -631,6 +633,39 @@ body.show-search--form {
         }
         &:last-child::after{
             display: none;
+        }
+    }
+}
+
+.pagination {
+    li {
+        cursor: pointer;
+        &.active {
+            background: #81e6d9;
+        }
+    }
+    .last-item {
+        a {
+            text-indent: -9999px;   
+            display: none;
+        }
+        &::after {
+            content: "\e606";
+            font-family: 'simple-line-icons';
+            font-size: 12px;
+            cursor: pointer;
+        }
+    }
+    .first-item {
+        a {
+            text-indent: -9999px;
+            display: none;
+        }
+        &::after {
+            content: "\e605";
+            font-family: 'simple-line-icons';
+            font-size: 12px;
+            cursor: pointer;
         }
     }
 }
