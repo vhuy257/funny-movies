@@ -111,7 +111,7 @@ class Header extends Component {
                 <div className="ml-4 md:flex items-center cart-item">
                   <button className="focus:outline-none">
                     <i className="icon-basket icons"></i>
-                    <span className="item-in-cart mx-2 bg-orange-400 text-sm px-2 py-1 text-white text-center leading-normal">20</span>
+                    <span className="item-in-cart mx-2 bg-orange-400 text-sm px-2 py-1 text-white text-center leading-normal">0</span>
                     /
                     <span className="leading-normal font-bold text-sm px-2 py-1">$40</span>
                   </button>

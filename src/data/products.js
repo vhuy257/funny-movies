@@ -31,14 +31,14 @@ const dataProduct = [
         image: 'burberry-large-giant-tote-in-colour-block-check--antique-yellow-golden-yellow-8006585.jpg',
         name: 'BURBERRY Large\'s Giant tote in colour block check antique yellow golden yellow',
         rating: 4.8,
-        type: 'bags',
+        type: 'bag',
         price: '699.00'
     },
     {
         image: 'chloe-drew-bijou-calfskin-clutch--black-chc18as115h1z001.jpg',
         name: 'Chloe Drew Bijou Calfskin Clutch Black',
         rating: 3.5,
-        type: 'bags',
+        type: 'bag',
         price: '1,200.00'
     },
     {

@@ -30,10 +30,9 @@ class ProductItem extends Component {
                         <i className="icon-heart icons h4 mx-3 d-block"></i>
                         <span className="text-tooltip text-xs text-white whitespace-no-wrap bg-teal-500 p-1">Add to wishlist</span>
                     </button>
-                    <button className="add-to-cart outline-none flex mb-2 items-center tooltip tooltip-right">
-                        <i className="icon-basket icons h4 mx-3 d-block"></i>
-                        <span className="text-tooltip text-xs text-white whitespace-no-wrap bg-teal-500 p-1">Add to cart</span>
-                    </button>
+                </div>
+                <div className="add-to-cart">
+                    <button className="btn primary">Add to cart</button>
                 </div>
             </li>
         )
