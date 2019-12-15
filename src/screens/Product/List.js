@@ -54,8 +54,6 @@ class List extends Component {
             return k.type === item.categories;
         });
 
-        console.log(temptArr);
-
         this.setState({
             ListProducts: temptArr,
         });
@@ -112,7 +110,7 @@ class List extends Component {
                                         rating={item}  
                                         starSpacing="4px"
                                     />
-                                    <span className="text-xs ml-2">(15)</span>
+                                    <span className="text-xs ml-2 text-gray-500">(15)</span>
                                 </div>
                             ))
                         }

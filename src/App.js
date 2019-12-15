@@ -17,6 +17,7 @@ import Search from './layouts/search-bar';
 import About from './screens/About';
 import ProductDetail from './screens/Product/Detail';
 import ProductList from './screens/Product/List';
+import Cart from './screens/Checkout/Cart';
 
 class App extends Component {
   render() {
@@ -33,6 +34,9 @@ class App extends Component {
           </Route>
           <Route exact path="/products">
             <ProductList/>
+          </Route>
+          <Route exact path="/cart">
+            <Cart/>
           </Route>
           <Route path="/:id" children={<ProductDetail/>}/>
         </Switch>
