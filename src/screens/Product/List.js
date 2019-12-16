@@ -9,21 +9,9 @@ import Tooltip from 'rc-tooltip';
 import StarRatings from 'react-star-ratings';
 import dataProduct from '../../data/products';
 
+const createSliderWithTooltip = Slider.createSliderWithTooltip;
+const Range = createSliderWithTooltip(Slider.Range);
 const Handle = Slider.Handle;
-const handle = (props) => {
-    const { value, dragging, index, ...restProps } = props;
-    return (
-      <Tooltip
-        prefixCls="rc-slider-tooltip"
-        overlay={value}
-        visible={dragging}
-        placement="top"
-        key={index}
-      >
-        <Handle value={value} {...restProps} />
-      </Tooltip>
-    );
-};
 
 class List extends Component {
     constructor (props) {
@@ -31,10 +19,36 @@ class List extends Component {
         this.state = {
           activePage: 1,
           filter: [],
-          ListProducts: dataProduct
+          ListProducts: dataProduct,
+          temptListProduct: dataProduct,
         };
     }
     
+    handleChange (value) {
+        var _arr = this.state.ListProducts.filter((item) => {
+            return parseInt(item.price) >= value[0] && parseInt(item.price) <= value[1];
+        });
+
+        this.setState({
+            ListProducts: _arr
+        });
+    }
+
+    handle(props) {
+        const { value, dragging, index, ...restProps } = props;
+        return (
+        <Tooltip
+            prefixCls="rc-slider-tooltip"
+            overlay={value}
+            visible={dragging}
+            placement="top"
+            key={index}
+        >
+            <Handle value={value} {...restProps} />
+        </Tooltip>
+        );
+    }
+
     handlePageChange (pageNumber) {
         console.log(`active page is ${pageNumber}`);
         this.setState({activePage: pageNumber});
@@ -42,21 +56,34 @@ class List extends Component {
 
     filterListProducts (item) {
         var _arr = this.state.filter;
-        _arr.push(item)
+        if(_arr.some(z => z.categories === item.categories)) {
+            _arr.splice(_arr.indexOf(item), 1);
+        } else {
+            _arr.push(item);
+        }
+        
         this.setState({
             filter: _arr,
             ListProducts: dataProduct
         });
         
-        var temptArr = this.state.ListProducts;
-        
-        temptArr = temptArr.filter(k => {
-            return k.type === item.categories;
+        var temptArr = [];
+        _arr.map((i) => {
+            var arr = this.state.temptListProduct.filter(k => {
+                return k.type === i.categories;
+            });
+            return temptArr = temptArr.concat(arr);
         });
 
-        this.setState({
-            ListProducts: temptArr,
-        });
+        if(_arr.length) {
+            this.setState({
+                ListProducts: temptArr,
+            });    
+        } else {
+            this.setState({
+                ListProducts: this.state.temptListProduct
+            });
+        }
     }
 
     render() {
@@ -115,7 +142,7 @@ class List extends Component {
                             ))
                         }
                         <h2 className="mb-2 font-bold mt-5">Price</h2>
-                        <Slider min={0} max={20} handle={handle} />
+                        <Range min={0} max={1550} onChange={(val) => this.handleChange(val)} handle={this.handle} />
                     </div>
                     <div className="main-content w-4/5">
                         <div className="text-right p-3 text-sm text-gray-500">
