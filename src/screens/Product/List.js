@@ -25,7 +25,7 @@ class List extends Component {
     }
     
     handleChange (value) {
-        var _arr = this.state.ListProducts.filter((item) => {
+        let _arr = this.state.temptListProduct.filter((item) => {
             return parseInt(item.price) >= value[0] && parseInt(item.price) <= value[1];
         });
 
@@ -129,15 +129,35 @@ class List extends Component {
                             Rate
                         </h2>
                         {
-                            [0,1,2,3,4].map((item, key) => (
+                            [
+                                {
+                                    start: 0,
+                                    count: 43
+                                },{
+                                    star: 1,
+                                    count: 67,
+                                },{
+                                    star: 2,
+                                    count: 8,
+                                },{
+                                    star: 3,
+                                    count: 11,
+                                },{
+                                    star: 4,
+                                    count: 23
+                                },{
+                                    star: 5,
+                                    count: 35
+                                }
+                            ].map((item, key) => (
                                 <div key={key}>
                                     <StarRatings 
                                         starRatedColor="#319795"
                                         starDimension="16px"
-                                        rating={item}  
+                                        rating={item.star}  
                                         starSpacing="4px"
                                     />
-                                    <span className="text-xs ml-2 text-gray-500">(15)</span>
+                                    <span className="text-xs ml-2 text-gray-500">{item.count}</span>
                                 </div>
                             ))
                         }
