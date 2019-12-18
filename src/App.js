@@ -24,7 +24,6 @@ class App extends Component {
     return (
       <Router>
         <Header {...this.props}/>
-        
         <Switch>
           <Route exact path="/">
             <HomePage/>
@@ -40,7 +39,6 @@ class App extends Component {
           </Route>
           <Route path="/:id" children={<ProductDetail/>}/>
         </Switch>
-
         <Footer/>
         <Search />
         <Modal {...this.props}/>

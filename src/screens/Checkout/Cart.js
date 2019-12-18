@@ -5,8 +5,8 @@ class Cart extends Component {
         return (
             <div className="container p-3">
                 <h2 className="font-bold text-2xl">Cart</h2>
-                <div className="flex flex-wrap mt-5">
-                    <div className="w-4/5">
+                <div className="flex flex-wrap mt-5 -mx-5 items-start">
+                    <div className="w-4/6 p-5">
                     <table class="table-fixed">
                         <thead className="text-left">
                             <tr>
@@ -44,8 +44,28 @@ class Cart extends Component {
                         </tbody>
                     </table>
                     </div>
-                    <div className="w-1/5">
-
+                    <div className="w-2/6 p-5 border-2 border-teal-300">
+                        <div className="flex justify-between my-3">
+                            <span>Totals:</span>
+                            <span>$7400</span>
+                        </div>
+                        <div className="flex justify-between my-3">
+                            <span>
+                                Shipping:
+                            </span>
+                            <span>
+                                $15
+                            </span>
+                        </div>
+                        <div className="flex justify-between mt-3 items-center">
+                            <span className="font-bold">Final Price</span>
+                            <strong className="text-xl text-teal-500">$7.500</strong>
+                        </div>
+                        <div className="mt-1">
+                            <button className="primary-button button bg-teal-500 block text-white w-full p-3 uppercase mt-5">
+                                Checkout
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
