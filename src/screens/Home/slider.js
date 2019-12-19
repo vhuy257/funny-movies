@@ -28,7 +28,7 @@ const SliderLayout = () => {
 					</div>
 					{
 						item.groupImage && item.groupImage.map((i, k) => (
-							<div className={i.effect}>
+							<div className={i.effect} key={k}>
 								<Tilt options={{max: 25}}>
 									<img key={k} src={`./images/${i.src}`} alt=""/>
 								</Tilt>

@@ -7,7 +7,7 @@ class Cart extends Component {
                 <h2 className="font-bold text-2xl">Cart</h2>
                 <div className="flex flex-wrap mt-5 -mx-5 items-start">
                     <div className="w-4/6 p-5">
-                    <table class="table-fixed">
+                    <table className="table-fixed">
                         <thead className="text-left">
                             <tr>
                                 <th className="w-1/4 px-4 py-2"></th>

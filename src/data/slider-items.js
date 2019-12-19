@@ -10,11 +10,11 @@ const sliderData = [
 		groupImage: [
 			{
 				src: 'plush-design-studio-NaTza96eJm0-unsplash-removebg-preview.png',
-				effect: 'left from-left object-fit w-64 h-64'
+				effect: 'left from-left'
 			},
 			{
 				src: 'burberry-men_s-backpack-rucksack-green-beast-print-rucksack-4051931-removebg-preview.png',
-				effect: 'right from-right object-fit w-64 h-64'
+				effect: 'right from-right'
 			},
 
 		]
@@ -27,7 +27,18 @@ const sliderData = [
         effect: '',
 		image: './images/sliders/143.jpg',
 		user: 'Erich Behrens',
-		userProfile: 'https://i.imgur.com/0Clfnu7.png'
+		userProfile: 'https://i.imgur.com/0Clfnu7.png',
+		groupImage: [
+			{
+				src: 'photo-1555617117-08d2a80f6aa9-removebg-preview.png',
+				effect: 'left from-left'
+			},
+			{
+				src: 'photo-1518131672697-613becd4fab5-removebg-preview.png',
+				effect: 'right from-right'
+			},
+
+		]
 	},
 	{
 		title: 'Phasellus volutpat metus',
@@ -37,7 +48,18 @@ const sliderData = [
         effect: '',
 		image: './images/sliders/144.jpg',
 		user: 'Bruno Vizovskyy',
-		userProfile: 'https://i.imgur.com/4KeKvtH.png'
+		userProfile: 'https://i.imgur.com/4KeKvtH.png',
+		groupImage: [
+			{
+				src: 'charles-3IMl0kCxpHQ-unsplash-removebg-preview.png',
+				effect: 'left from-left'
+			},
+			{
+				src: 'rb3016w0365-51-removebg-preview.png',
+				effect: 'right from-right'
+			},
+
+		]
 	}
 ];
 

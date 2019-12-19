@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
+import {Link} from 'react-router-dom';
 
 class ProductItem extends Component {
     render() {
@@ -18,7 +19,9 @@ class ProductItem extends Component {
                             starSpacing="2px"
                         />
                     </div>
-                    <h2 className="mt-4 h-8 truncate" alt={item.name}>{item.name}</h2>
+                    <Link to={item.name}>
+                        <h2 className="mt-4 h-8 truncate" alt={item.name}>{item.name}</h2>
+                    </Link>
                     <h4 className="font-bold text-teal-600 text-xl">$ {item.price}</h4>
                 </div>
                 <div className="product-toolbars text-center flex flex-col items-center justify-start pt-5">
