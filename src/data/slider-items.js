@@ -6,7 +6,18 @@ const sliderData = [
         button: 'Read More',
 		image: './images/sliders/142.jpg',
 		user: 'Luan Gjokaj',
-		userProfile: 'https://i.imgur.com/JSW6mEk.png'
+		userProfile: 'https://i.imgur.com/JSW6mEk.png',
+		groupImage: [
+			{
+				src: 'plush-design-studio-NaTza96eJm0-unsplash-removebg-preview.png',
+				effect: 'left from-left object-fit w-64 h-64'
+			},
+			{
+				src: 'burberry-men_s-backpack-rucksack-green-beast-print-rucksack-4051931-removebg-preview.png',
+				effect: 'right from-right object-fit w-64 h-64'
+			},
+
+		]
 	},
 	{
 		title: 'Tortor Dapibus Commodo Aenean Quam',

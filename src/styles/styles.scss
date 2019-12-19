@@ -76,6 +76,32 @@ body {
     padding: 0px;
     width: 100%;
     height: 500px;
+    .left {
+        position: absolute;
+        left: 350px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease-in-out;
+        transition-delay: 1.5s;
+        opacity: 0;
+    }
+    .swiper-slide-active {
+        .left.from-left {
+            opacity: 1;
+        }
+        .right.from-right {
+            opacity: 1;
+        }
+    }
+    .right {
+        position: absolute;
+        right: 350px;
+        top: 50%;
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: all 0.3s ease-in-out;
+        transition-delay: 2s;
+    }
 }
 
 .swiper-wrapper {
