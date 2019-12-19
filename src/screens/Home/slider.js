@@ -6,11 +6,6 @@ import Tilt from 'react-tilt';
 
 const SliderLayout = () => {
     const params = {
-		pagination: {
-		  el: '.swiper-pagination',
-		  type: 'bullets',
-		  clickable: true
-		},
 		navigation: {
 		  nextEl: '.swiper-button-next',
 		  prevEl: '.swiper-button-prev'
