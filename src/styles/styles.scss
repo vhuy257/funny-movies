@@ -836,3 +836,23 @@ button {
         content: "\e605";
     }
 }
+
+.minicart:hover .mini-cart {
+    visibility: visible;
+    transform: translateY(0);
+    transition: all .1s ease-in-out;
+}
+
+.mini-cart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 4px solid #f6ad55;
+    min-width: 480px;
+    height: 320px;
+    background: #fff;
+    padding: 15px;
+    z-index: 99;
+    transform: translateY(20px);
+    visibility: hidden;
+}

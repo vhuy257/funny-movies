@@ -108,7 +108,7 @@ class Header extends Component {
                 <div className="ml-4 md:flex items-center cart-item">
                   <button className="focus:outline-none"><i className="icon-heart icons"></i></button>
                 </div>
-                <div className="ml-4 md:flex items-center cart-item">
+                <div className="ml-4 md:flex items-center cart-item minicart relative">
                   <Link to="/cart">
                     <button className="focus:outline-none">
                       <i className="icon-basket icons"></i>
@@ -117,6 +117,9 @@ class Header extends Component {
                       <span className="leading-normal font-bold text-sm px-2 py-1">$40</span>
                     </button>
                   </Link>
+                  <div className="dropdown mini-cart">
+                    Minicart
+                  </div>
                 </div>
               </div>
             </nav>
