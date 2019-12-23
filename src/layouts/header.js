@@ -119,23 +119,16 @@ class Header extends Component {
                   </Link>
                   <div className="dropdown mini-cart p3">
                     <ul>
-                      <li className="flex justify-start items-center p-3">
-                        <img src="./images/burberry-men_s-backpack-rucksack-green-beast-print-rucksack-4051931-removebg-preview.png" className="w-12 h-12 object-fit mr-5" alt=""/>
-                        <h2 className="font-bold text-base">Lorem ipsum</h2>
-                        <span className="price ml-5">$45</span>
-                      </li>
-                      <li className="flex justify-start items-center p-3">
-                      <img src="./images/burberry-men_s-backpack-rucksack-green-beast-print-rucksack-4051931-removebg-preview.png" className="w-12 h-12 object-fit mr-5" alt=""/>
-                        <h2 className="font-bold text-base">Lorem ipsum</h2>
-                        <span className="price ml-5">$45</span>
-                      </li>
-                      <li className="flex justify-start items-center p-3">
-                        <img src="./images/burberry-men_s-backpack-rucksack-green-beast-print-rucksack-4051931-removebg-preview.png" className="w-12 h-12 object-fit mr-5" alt=""/>
-                        <h2 className="font-bold text-base">Lorem ipsum</h2>
-                        <span className="price ml-5">$45</span>
-                      </li>
+                      {this.props.cartData.map((item, k) => (
+                        <li 
+                        key={k}
+                        className="flex justify-start items-center p-3">
+                          <img src={`./images/product/${item.image}`} className="w-12 h-12 object-fit mr-5" alt=""/>
+                          <h2 className="font-bold text-base">{item.name}</h2>
+                          <span className="price ml-5">${item.price}</span>
+                        </li>
+                      ))}
                     </ul>
-                    
                     <div className="options text-center mx-auto">
                       <h2 className="text-xl">Total <strong>$455</strong></h2>
                       <button className="bg-teal-500 mt-2 hover:bg-teal-700 text-white font-bold py-2 px-4 mx-auto">
@@ -163,6 +156,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps({alerts}) {
     return {
         modalFlag: alerts,
+        
     }
 }
 

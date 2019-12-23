@@ -25,9 +25,7 @@ class LayoutHandler extends Component {
         this.props.initCart();
     }
 
-    render() {
-        console.log('aaa', this.props);
-
+    render() {    
         return (
             <Router>
                 <Header {...this.props}/>
