@@ -24,6 +24,8 @@ const enhancer = composeEnhancers(applyMiddleware(sagaMiddleware));
 
 const store = createStore(createReducer(), enhancer);
 
+console.log(store.getState());
+
 store.asyncReducers = {};
 
 export const injectReducer = (key, reducer) => {

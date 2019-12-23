@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
 import {Link} from 'react-router-dom';
+import connect from 'react-redux/es/connect/connect';
+import {bindActionCreators} from 'redux';
+import * as cartActions from '../../store/actions/cart';
 
 class ProductItem extends Component {
+    constructor(props) {
+        super(props);
+        this.addtoCart = this.addtoCart.bind(this);
+    }
+
+    addtoCart(item) {
+        console.log(item);
+        this.props.addProductToCart({
+            product: item
+        });
+    }
+
     render() {
         let { item } = this.props;
         
@@ -35,11 +50,17 @@ class ProductItem extends Component {
                     </button>
                 </div>
                 <div className="add-to-cart">
-                    <button className="btn primary">Add to cart</button>
+                    <button className="btn primary" onClick={() => {this.addtoCart(item)}}>Add to cart</button>
                 </div>
             </li>
         )
     }
 }
 
-export default ProductItem;
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        addProductToCart: cartActions.addProductToCart,
+    }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(ProductItem);
