@@ -420,7 +420,6 @@ body {
 }
 
 .cart-item {
-    position: relative;
     .item-in-cart {
         position: relative;
         right: 0;
@@ -837,22 +836,21 @@ button {
     }
 }
 
-.minicart:hover .mini-cart {
+.minicart:hover .mini-cart,
+.mini-cart:hover {
     visibility: visible;
-    transform: translateY(0);
+    opacity: 1;
     transition: all .1s ease-in-out;
 }
 
 .mini-cart {
     position: absolute;
-    top: 0;
+    top: 100%;
     right: 0;
     border-top: 4px solid #f6ad55;
-    min-width: 480px;
-    height: 320px;
     background: #fff;
     padding: 15px;
     z-index: 99;
-    transform: translateY(20px);
+    opacity: 0;
     visibility: hidden;
 }

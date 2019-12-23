@@ -91,14 +91,14 @@ class Header extends Component {
                 </div>
             </div>
             <div className="container mx-auto">
-            <nav className="flex content-center items-center justify-between flex-wrap  p-3">
+            <nav className="flex content-center items-center justify-between flex-wrap relative">
               <div className="flex items-center flex-shrink-0 mr-6">
                 <Link to="/" className="flex flex-shrink-0 items-center">
                   <svg className="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
                   <span className="font-semibold text-xl tracking-tight">Hommie</span>
                 </Link>
               </div>
-              <div className="w-full block lg:flex lg:items-center lg:w-auto">
+              <div className="w-full block lg:flex lg:items-center lg:w-auto p-3">
                 <Menu/>
               </div>
               <div className="w-full block lg:flex lg:items-center lg:w-auto">
@@ -108,17 +108,40 @@ class Header extends Component {
                 <div className="ml-4 md:flex items-center cart-item">
                   <button className="focus:outline-none"><i className="icon-heart icons"></i></button>
                 </div>
-                <div className="ml-4 md:flex items-center cart-item minicart relative">
+                <div className="ml-4 md:flex items-center cart-item minicart p-3">
                   <Link to="/cart">
                     <button className="focus:outline-none">
                       <i className="icon-basket icons"></i>
-                      <span className="item-in-cart mx-2 bg-orange-400 text-sm px-2 py-1 text-white text-center leading-normal">0</span>
+                      <span className="item-in-cart mx-2 bg-orange-400 text-sm px-2 py-1 text-white text-center leading-normal">{this.props.cartData.length || 0}</span>
                       /
                       <span className="leading-normal font-bold text-sm px-2 py-1">$40</span>
                     </button>
                   </Link>
-                  <div className="dropdown mini-cart">
-                    Minicart
+                  <div className="dropdown mini-cart p3">
+                    <ul>
+                      <li className="flex justify-start items-center p-3">
+                        <img src="./images/burberry-men_s-backpack-rucksack-green-beast-print-rucksack-4051931-removebg-preview.png" className="w-12 h-12 object-fit mr-5" alt=""/>
+                        <h2 className="font-bold text-base">Lorem ipsum</h2>
+                        <span className="price ml-5">$45</span>
+                      </li>
+                      <li className="flex justify-start items-center p-3">
+                      <img src="./images/burberry-men_s-backpack-rucksack-green-beast-print-rucksack-4051931-removebg-preview.png" className="w-12 h-12 object-fit mr-5" alt=""/>
+                        <h2 className="font-bold text-base">Lorem ipsum</h2>
+                        <span className="price ml-5">$45</span>
+                      </li>
+                      <li className="flex justify-start items-center p-3">
+                        <img src="./images/burberry-men_s-backpack-rucksack-green-beast-print-rucksack-4051931-removebg-preview.png" className="w-12 h-12 object-fit mr-5" alt=""/>
+                        <h2 className="font-bold text-base">Lorem ipsum</h2>
+                        <span className="price ml-5">$45</span>
+                      </li>
+                    </ul>
+                    
+                    <div className="options text-center mx-auto">
+                      <h2 className="text-xl">Total <strong>$455</strong></h2>
+                      <button className="bg-teal-500 mt-2 hover:bg-teal-700 text-white font-bold py-2 px-4 mx-auto">
+                          View and edit cart
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -20,12 +20,6 @@ const allCartReducer = function (state = initialState, action) {
                 ...state
             }
         }
-        case Actions.INIT_CART_SUCCESS:
-        {
-            return {
-                ...state,
-            }
-        }
         case Actions.INIT_CART_FROM_LOCALSTORAGE:
         {
             return {
