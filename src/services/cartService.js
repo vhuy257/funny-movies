@@ -19,7 +19,18 @@ class cartService extends EventEmitter {
     }
 
     addProductToCart = ({product}) => {
-        return product;
+        var _cartArr = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        var _result = _cartArr.filter(item => {
+            return item.name === product.name;
+        });
+
+        if(_result.length === 0) {
+            _cartArr.push(product); 
+        } 
+        
+        localStorage.setItem('cart', JSON.stringify(_cartArr));
+        return _cartArr;
     }
 
     getListProductInShoppingCart = ({cart_id}) => {

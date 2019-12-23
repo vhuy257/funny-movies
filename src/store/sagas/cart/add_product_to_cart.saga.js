@@ -12,8 +12,8 @@ import {
 
 function* addProductToCartSagas(action) {
     try {
-        const data = yield call(cartService.addProductToCart, action.payload);
-        console.log(data);
+        const data = yield call(cartService.addProductToCart, action.payload); 
+        
         yield put ({
             type: ADD_PRODUCT_TO_CART_SUCCESS,
             payload: data

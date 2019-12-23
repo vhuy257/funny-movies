@@ -1,7 +1,6 @@
 import * as Actions from '../../actions';
 
-const initialState = {
-    cartId: '',
+const initialState = {    
     cartList: [],
     totalAmount: '0',
 };
@@ -25,14 +24,13 @@ const allCartReducer = function (state = initialState, action) {
         {
             return {
                 ...state,
-                cartId: action.payload.all.cartId
             }
         }
         case Actions.INIT_CART_FROM_LOCALSTORAGE:
         {
             return {
                 ...state,
-                cartId: action.payload.cart.all.cartId
+                cartList: action.payload
             }
         }
         case Actions.ADD_PRODUCT_TO_CART_SUCCESS:

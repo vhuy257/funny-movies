@@ -11,7 +11,9 @@ import {
 
 function* cartInitSagas() {
     try {
-        const cartInit = JSON.parse(localStorage.getItem('token'));
+        const cartInit = JSON.parse(localStorage.getItem('cart'));
+        console.log(cartInit);
+        
         if(!cartInit) {
             const data = yield call(cartService.initCart);
             var cartId = { 
@@ -19,7 +21,7 @@ function* cartInitSagas() {
                     all: { cartId: data.cart_id }
                 }
             };
-            localStorage.setItem('token', JSON.stringify(cartId));
+            localStorage.setItem('cart', JSON.stringify(cartId));
             yield put ({
                 type: INIT_CART_SUCCESS,
                 payload: data
