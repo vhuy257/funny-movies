@@ -78,4 +78,19 @@ button {
             background: #1e6765;
         }
     }
+    &.delete_cart-item {
+        &::before {
+            content: "\e054";
+            font-family: "simple-line-icons";
+            font-size: 14px;
+        }
+
+    }
+    &.update_cart-item {
+        &::before {
+            content: "\e05f";
+            font-family: "simple-line-icons";
+            font-size: 14px;
+        }
+    }
 }

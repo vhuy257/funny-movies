@@ -28,7 +28,9 @@ class Cart extends Component {
                                 <td className="border-b px-4 py-2">{item.name}</td>
                                 <td className="border-b px-4 py-2">{item.qty || 1}</td>
                                 <td className="border-b px-4 py-2">{item.price}</td>
-                                <td className="border-b px-4 py-2"></td>
+                                <td className="border-b px-4 py-2">
+                                    <button className="delete_cart-item focus:outline-none"></button>
+                                </td>
                             </tr>
                         ))}
                         </tbody>
