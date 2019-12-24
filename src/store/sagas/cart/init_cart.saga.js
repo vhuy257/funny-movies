@@ -7,7 +7,7 @@ import {
 
 function* cartInitSagas() {
     try {
-        const cartInit = JSON.parse(localStorage.getItem('cart')) || [];        
+        const cartInit = JSON.parse(localStorage.getItem('cart')).listProduct || [];
         yield put ({
             type: INIT_CART_FROM_LOCALSTORAGE,
             payload: cartInit

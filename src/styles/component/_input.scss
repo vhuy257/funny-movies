@@ -1,0 +1,81 @@
+.checkbox-input {
+    position: relative;
+    input[type="checkbox"] {
+        width: 110px;
+        height: 26px;
+        opacity: 0;
+        -webkit-appearance: none;
+        display: inline-block;
+        vertical-align: middle;
+        z-index: 100;
+        top: 50%;
+        left: 0;
+        margin-top: -13px;
+        position: absolute;
+        cursor: pointer;
+        &:checked + label::after {
+            content: '\2713';
+            text-align: center;
+            line-height: 28px;
+            color: #319795;
+            width: 26px;
+            height: 26px;
+            top: 50%;
+            left: 0;
+            margin-top: -13px;
+            position: absolute;
+            cursor: pointer;
+        }
+    }
+    .label {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        padding: 10px 10px 10px 40px;
+        vertical-align: top;
+        cursor: pointer;
+        &::before {
+            content: '';
+            border: 2px solid rgba(0,0,0,0.3);
+            width: 26px;
+            height: 26px;
+            top: 50%;
+            left: 0;
+            margin-top: -13px;
+            position: absolute;
+            cursor: pointer;
+        }
+    }
+}
+
+.rc-slider {
+    .rc-slider-track {
+        border-radius: 0;
+        background-color: $primary-color;
+    }
+    .rc-slider-handle {
+        border: solid 2px $primary-color;
+        &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 0 5px #82e6e4;
+        }
+    }
+    .rc-slider-rail {
+        border-radius: 0;
+    }
+}
+
+button {
+    &.primary {
+        width: 160px;
+        text-align: center;
+        background: #38b2ac;
+        color: #fff;
+        padding: 5px 10px;
+        text-transform: capitalize;
+        transition: all .2s ease-in-out;
+        &:hover {
+            background: #1e6765;
+        }
+    }
+}

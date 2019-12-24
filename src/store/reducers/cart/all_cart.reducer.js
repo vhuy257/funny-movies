@@ -2,7 +2,7 @@ import * as Actions from '../../actions';
 
 const initialState = {    
     cartList: [],
-    totalAmount: '0',
+    totalAmount: 0,
 };
 
 function removeItemFromCartFnc (listCart, itemRemove) {
@@ -31,7 +31,7 @@ const allCartReducer = function (state = initialState, action) {
         {
             return {
                 ...state,
-                cartList: action.payload
+                cartList: action.payload.listProduct
             }
         }
         case Actions.GET_LIST_PRODUCT_IN_CART_SUCCESS:
@@ -52,7 +52,7 @@ const allCartReducer = function (state = initialState, action) {
         {
             return {
                 ...state,
-                totalAmount: action.payload.total_amount || 0
+                totalAmount: action.payload
             }
         }
         case Actions.REMOVE_ITEM_FROM_CART_SUCCESS:

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 class Cart extends Component {
     render() {
@@ -11,43 +13,31 @@ class Cart extends Component {
                         <thead className="text-left">
                             <tr>
                                 <th className="w-1/4 px-4 py-2"></th>
-                                <th className="w-1/2 px-4 py-2 uppercase text-gray-600">Name</th>
-                                <th className="w-1/4 px-4 py-2 uppercase text-gray-600">Price</th>
+                                <th className="w-1/2 px-4 py-2">Name</th>
+                                <th className="w-1/2 px-4 py-2">Qty</th>
+                                <th className="w-1/4 px-4 py-2">Price</th>
                                 <th className="w-1/4 px-4 py-2"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="border-b px-4 py-2"><img src="./images/product/balenciaga-explorer-backpack-graffiti-5032210fe35-1080.jpg" alt="" className="w-32 mx-auto h-32 object-fit"/></td>
-                                <td className="border-b px-4 py-2">Intro to CSS</td>
-                                <td className="border-b px-4 py-2">Adam</td>
-                                <td className="border-b px-4 py-2">858</td>
+                        {this.props.cartData.map((item, k) => (
+                            <tr key={k}>
+                                <td className="border-b px-4 py-2">
+                                    <img src={`./images/product/${item.image}`} alt="" className="w-24 mx-auto h-24 object-fit"/>
+                                </td>
+                                <td className="border-b px-4 py-2">{item.name}</td>
+                                <td className="border-b px-4 py-2">{item.qty || 1}</td>
+                                <td className="border-b px-4 py-2">{item.price}</td>
+                                <td className="border-b px-4 py-2"></td>
                             </tr>
-                            <tr>
-                                <td className="border-b px-4 py-2"><img src="./images/product/ray-ban-aviator-58mm-classic-green-sunglasses-rb3025-l0205-58-14.jpg" alt="" className="w-32 mx-auto h-32 object-fit"/></td>
-                                <td className="border-b px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-                                <td className="border-b px-4 py-2">Adam</td>
-                                <td className="border-b px-4 py-2">112</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b px-4 py-2"><img src="./images/product/tissot-le-locle-powermatic-80-automatic-mens-watch-t0064071603300.jpg" alt="" className="w-32 mx-auto h-32 object-fit"/></td>
-                                <td className="border-b px-4 py-2">Into to JavaScript</td>
-                                <td className="border-b px-4 py-2">Chris</td>
-                                <td className="border-b px-4 py-2">1,280</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b px-4 py-2"><img src="./images/product/tissot-le-locle-powermatic-80-automatic-mens-watch-t0064071603300.jpg" alt="" className="w-32 mx-auto h-32 object-fit"/></td>
-                                <td className="border-b px-4 py-2">Into to JavaScript</td>
-                                <td className="border-b px-4 py-2">Chris</td>
-                                <td className="border-b px-4 py-2">1,280</td>
-                            </tr>
+                        ))}
                         </tbody>
                     </table>
                     </div>
                     <div className="w-2/6 p-5 border-2 border-teal-300">
                         <div className="flex justify-between my-3">
                             <span>Totals:</span>
-                            <span>$7400</span>
+                            <span>${this.props.totalAmount}</span>
                         </div>
                         <div className="flex justify-between my-3">
                             <span>
@@ -59,7 +49,7 @@ class Cart extends Component {
                         </div>
                         <div className="flex justify-between mt-3 items-center">
                             <span className="font-bold">Final Price</span>
-                            <strong className="text-xl text-teal-500">$7.500</strong>
+                            <strong className="text-xl text-teal-500">${this.props.totalAmount - 15}</strong>
                         </div>
                         <div className="mt-1">
                             <button className="primary-button button bg-teal-500 block text-white w-full p-3 uppercase mt-5">
@@ -73,4 +63,16 @@ class Cart extends Component {
     }
 }
 
-export default Cart;
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        
+    }, dispatch);
+}
+
+function mapStateToProps({cart}) {
+    return {
+        
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

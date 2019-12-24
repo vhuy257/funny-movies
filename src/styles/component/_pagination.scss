@@ -1,0 +1,32 @@
+.pagination {
+    li {
+        cursor: pointer;
+        &.active {
+            background: #81e6d9;
+        }
+    }
+    .last-item {
+        a {
+            text-indent: -9999px;   
+            display: none;
+        }
+        &::after {
+            content: "\e606";
+            font-family: 'simple-line-icons';
+            font-size: 12px;
+            cursor: pointer;
+        }
+    }
+    .first-item {
+        a {
+            text-indent: -9999px;
+            display: none;
+        }
+        &::after {
+            content: "\e605";
+            font-family: 'simple-line-icons';
+            font-size: 12px;
+            cursor: pointer;
+        }
+    }
+}

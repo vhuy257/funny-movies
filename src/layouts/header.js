@@ -114,7 +114,7 @@ class Header extends Component {
                       <i className="icon-basket icons"></i>
                       <span className="item-in-cart mx-2 bg-orange-400 text-sm px-2 py-1 text-white text-center leading-normal">{this.props.cartData.length || 0}</span>
                       /
-                      <span className="leading-normal font-bold text-sm px-2 py-1">$40</span>
+                      <span className="leading-normal font-bold text-sm px-2 py-1">${this.props.totalAmount}</span>
                     </button>
                   </Link>
                   <div className="dropdown mini-cart p3">
@@ -122,19 +122,28 @@ class Header extends Component {
                       {this.props.cartData.map((item, k) => (
                         <li 
                         key={k}
-                        className="flex justify-start items-center p-3">
-                          <img src={`./images/product/${item.image}`} className="w-12 h-12 object-fit mr-5" alt=""/>
-                          <h2 className="font-bold text-base">{item.name}</h2>
-                          <span className="price ml-5">${item.price}</span>
+                        className="flex justify-between items-center p-3">
+                          <div className="info-product flex flex-start items-center">
+                            <img src={`./images/product/${item.image}`} className="w-12 h-12 object-fit mr-5" alt=""/>
+                            <h2 className="text-base">{item.name}</h2>
+                          </div>
+                          <span className="font-bold text-xl price ml-5">${item.price}</span>
                         </li>
                       ))}
                     </ul>
-                    <div className="options text-center mx-auto">
-                      <h2 className="text-xl">Total <strong>$455</strong></h2>
-                      <button className="bg-teal-500 mt-2 hover:bg-teal-700 text-white font-bold py-2 px-4 mx-auto">
-                          View and edit cart
-                      </button>
-                    </div>
+                    {this.props.cartData.length !== 0 && (
+                      <div className="options text-center mx-auto">
+                        <h2 className="text-base text-gray-700">Total:<strong className="text-teal-700 text-xl ml-4">${this.props.totalAmount}</strong></h2>
+                        <Link to="/cart">
+                          <button className="bg-teal-500 mt-2 hover:bg-teal-700 text-white font-bold py-2 px-4 mx-auto">
+                              View and edit cart
+                          </button>
+                        </Link>
+                      </div>
+                    )}
+                    {this.props.cartData.length === 0 && (
+                      <h2 className="text-center">Your cart is empty!</h2>
+                    )}
                   </div>
                 </div>
               </div>
@@ -156,7 +165,6 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps({alerts}) {
     return {
         modalFlag: alerts,
-        
     }
 }
 

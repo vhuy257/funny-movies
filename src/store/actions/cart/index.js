@@ -40,10 +40,9 @@ export function getListProductInShoppingCart (data) {
     }
 }
 
-export function totalAmountFromCart (data) {
+export function totalAmountFromCart () {
     return {
-        type: LOAD_TOTAL_AMOUNT_FROM_CART,
-        payload: data
+        type: LOAD_TOTAL_AMOUNT_FROM_CART
     }
 }
 

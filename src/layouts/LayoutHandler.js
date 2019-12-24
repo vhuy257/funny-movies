@@ -23,6 +23,7 @@ import * as cartActions from '../store/actions/cart';
 class LayoutHandler extends Component {
     componentDidMount() {
         this.props.initCart();
+        this.props.initTotalAmount();
     }
 
     render() {    
@@ -40,7 +41,7 @@ class LayoutHandler extends Component {
                     <ProductList/>
                 </Route>
                 <Route exact path="/cart">
-                    <Cart/>
+                    <Cart {...this.props}/>
                 </Route>
                 <Route path="/:id" children={<ProductDetail/>}/>
                 </Switch>
@@ -56,12 +57,14 @@ class LayoutHandler extends Component {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         initCart: cartActions.initCart,
+        initTotalAmount: cartActions.totalAmountFromCart,
     }, dispatch)
 }
 
 function mapStateToProps({cart}) {
     return {
-        cartData: cart.all.cartList
+        cartData: cart.all.cartList,
+        totalAmount: cart.all.totalAmount
     }
 }
 

@@ -1,6 +1,4 @@
-import {put, takeLatest, call} from 'redux-saga/effects';
-import cartService from "../../../services/cartService";
-
+import {put, takeLatest} from 'redux-saga/effects';
 import {
     LOAD_TOTAL_AMOUNT_FROM_CART,
     LOAD_TOTAL_AMOUNT_FROM_CART_SUCCESS,
@@ -8,9 +6,9 @@ import {
 }
     from "../../actions/cart";
 
-function* loadTotalAmountSagas(action) {
+function* loadTotalAmountSagas() {
     try {
-        const data = yield call(cartService.totalAmountFromCart, action.payload);
+        const data = JSON.parse(localStorage.getItem('cart')).totalAmount || 0;
         yield put ({
             type: LOAD_TOTAL_AMOUNT_FROM_CART_SUCCESS,
             payload: data
