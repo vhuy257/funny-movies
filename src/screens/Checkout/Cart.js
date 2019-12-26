@@ -51,7 +51,7 @@ class Cart extends Component {
                         </div>
                         <div className="flex justify-between mt-3 items-center">
                             <span className="font-bold">Final Price</span>
-                            <strong className="text-xl text-teal-500">${this.props.totalAmount - 15}</strong>
+                            <strong className="text-xl text-teal-500">${this.props.totalAmount + 15}</strong>
                         </div>
                         <div className="mt-1">
                             <button className="primary-button button bg-teal-500 block text-white w-full p-3 uppercase mt-5">

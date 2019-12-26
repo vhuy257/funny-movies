@@ -68,6 +68,7 @@ class Header extends Component {
     }
 
     render() {    
+      console.log(this.props.cartData, 'this.props.cartData');
       return (
         <header className="navigation relative">
             <div className="bg-teal-600 p-1">
