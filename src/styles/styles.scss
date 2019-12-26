@@ -105,8 +105,8 @@ body {
 }
 
 
-.list--post {
-    .date--post {
+.list-post {
+    .date-post {
         top: -12px;
     }
 }
@@ -139,5 +139,30 @@ body {
         visibility: visible;
         opacity: 1;
         transform: translate(-50%, 50%);
+    }
+}
+
+.table-cart {
+    .item-options {
+        & > button {
+            position: absolute;
+            top: 50%;
+            margin-top: -50%;
+            transition: all .3s ease-in-out;
+        }
+        .option-confirm {
+            position: absolute;
+            top: 50%;
+            transform: translateY(80px);
+            transition: all .3s ease-in-out;
+        }
+        &.actived {
+            & > button {
+                transform: translateY(80px);
+            }
+            .option-confirm {
+                transform: translateY(-50%);
+            }
+        }
     }
 }

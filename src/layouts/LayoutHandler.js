@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { ToastContainer } from 'react-toastify';
-import Search from './search-bar';
+import Search from './SearchBar';
 import About from '../screens/About';
 import ProductDetail from '../screens/Product/Detail';
 import ProductList from '../screens/Product/List';
@@ -9,11 +9,11 @@ import {
     BrowserRouter as Router,
     Switch,
     Route
-  } from "react-router-dom";
-import Footer from './footer';
-import Modal from '../components/modal';
-import HomePage from '../screens/Home/index';
-import Header from './header';
+} from "react-router-dom";
+import Footer from './Footer';
+import Modal from '../components/Modal/Register';
+import HomePage from '../screens/Home/Index';
+import Header from './Header';
 import '../styles/styles.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import {connect} from 'react-redux';

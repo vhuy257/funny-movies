@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import * as modalActions from '../store/actions/alerts/';
+import * as modalActions from '../../store/actions/alerts';
 import {bindActionCreators} from 'redux';
 import { toast } from 'react-toastify';
 
@@ -40,7 +40,6 @@ class Modal extends Component {
 
     render() {
         return (
-            <>
             <div className={this.props.showModal ? "modal fixed w-full h-full top-0 left-0 flex items-center justify-center" : "modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center"}>
                 <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
                 <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto shadow-lg z-50 overflow-y-auto">
@@ -89,7 +88,6 @@ class Modal extends Component {
                 </div>
                 </div>
             </div>
-            </>
         )
     }
 }

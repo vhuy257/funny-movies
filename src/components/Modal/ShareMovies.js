@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import * as modalActions from '../store/actions/alerts/';
+import * as modalActions from '../../store/actions/alerts';
 import {bindActionCreators} from 'redux';
 import firebase from 'firebase/app';
 import 'firebase/database'; 

@@ -3,13 +3,21 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 class Cart extends Component {
+    showConfirm (e) {
+        e.target.parentElement.classList.add('actived');
+    }
+
+    hideConfirm (e) {
+        e.target.parentElement.parentNode.parentNode.classList.remove('actived');
+    }
+
     render() {
         return (
             <div className="container p-3">
                 <h2 className="font-bold text-2xl">Cart</h2>
                 <div className="flex flex-wrap mt-5 -mx-5 items-start">
                     <div className="w-4/6 p-5">
-                    <table className="table-fixed">
+                    <table className="table-fixed table-cart">
                         <thead className="text-left">
                             <tr>
                                 <th className="w-1/4 px-4 py-2"></th>
@@ -28,8 +36,16 @@ class Cart extends Component {
                                 <td className="border-b px-4 py-2">{item.name}</td>
                                 <td className="border-b px-4 py-2">{item.qty || 1}</td>
                                 <td className="border-b px-4 py-2">{item.price}</td>
-                                <td className="border-b px-4 py-2">
-                                    <button className="delete_cart-item focus:outline-none"></button>
+                                <td className={item.showOptions ? 'border-b px-4 py-2 relative overflow-hidden item-options actived' : 'border-b px-4 py-2 relative overflow-hidden item-options'}>
+                                    <button className="delete_cart-item focus:outline-none" onClick={(e) => {this.showConfirm(e)}}></button>
+                                    <div className="option-confirm">
+                                        <button className="confirm-yes focus:outline-none">
+                                            <i className="icon-check icons h4 d-block mt-4"></i>
+                                        </button>
+                                        <button className="confirm-cancel focus:outline-none" onClick={(e) => {this.hideConfirm(e)}}>
+                                            <i className="icon-close icons h4 d-block mt-4" />
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}

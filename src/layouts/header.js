@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import * as modalActions from '../store/actions/alerts';
 import {bindActionCreators} from 'redux';
 import { toast } from 'react-toastify';
-import Menu from './menu';
+import Menu from './Menu';
 import {Link} from 'react-router-dom';
 
 class Header extends Component {

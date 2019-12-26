@@ -1,9 +1,9 @@
 import React from 'react';
-import SliderLayout from './slider';
+import SliderLayout from './Slider';
 import Masonry from 'react-masonry-component';
-import SliderProduct from './slider-product';
-import Blog from './blog';
-import Partner from './partner';
+import SliderProduct from './SliderProduct';
+import Blog from './Blog';
+import Partner from './Partner';
 
 const masonryOptions = {
     transitionDuration: 0
