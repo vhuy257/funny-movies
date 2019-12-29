@@ -40,8 +40,8 @@ class cartService extends EventEmitter {
         
     }
 
-    removeProductFromCart = ({item_id}) => {
-        
+    removeProductFromCart = ({item}) => {
+        console.log(item, 'sss');
     }
 }
 

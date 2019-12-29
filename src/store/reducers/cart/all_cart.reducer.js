@@ -7,7 +7,7 @@ const initialState = {
 
 function removeItemFromCartFnc (listCart, itemRemove) {
     return listCart.filter((item) => {
-        return item.item_id !== itemRemove.item_id;
+        return item.id !== itemRemove.id;
     });
 }
 

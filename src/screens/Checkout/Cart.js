@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import * as cartActions from '../../store/actions/cart/index';
 
 class Cart extends Component {
     showConfirm (e) {
+        e.preventDefault();
         e.target.parentElement.classList.add('actived');
     }
 
     hideConfirm (e) {
+        e.preventDefault();
         e.target.parentElement.parentNode.parentNode.classList.remove('actived');
+    }
+
+    removeItem (item) {
+        this.props.removeItem(item);
+        console.log(item);
     }
 
     render() {
@@ -39,7 +47,7 @@ class Cart extends Component {
                                 <td className={item.showOptions ? 'border-b px-4 py-2 relative overflow-hidden item-options actived' : 'border-b px-4 py-2 relative overflow-hidden item-options'}>
                                     <button className="delete_cart-item focus:outline-none" onClick={(e) => {this.showConfirm(e)}}></button>
                                     <div className="option-confirm">
-                                        <button className="confirm-yes focus:outline-none">
+                                        <button className="confirm-yes focus:outline-none" onClick={() => {this.removeItem(item)}}>
                                             <i className="icon-check icons h4 d-block mt-4"></i>
                                         </button>
                                         <button className="confirm-cancel focus:outline-none" onClick={(e) => {this.hideConfirm(e)}}>
@@ -83,7 +91,7 @@ class Cart extends Component {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        
+        removeItem: cartActions.removeItemFromCart
     }, dispatch);
 }
 

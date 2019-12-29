@@ -11,15 +11,13 @@ import {
 
 function* removeProductFromCartSagas(action) {
     try {
-        yield call(cartService.removeProductFromCart, action.payload);
-        const data = yield call(cartService.totalAmountFromCart, action.payload);
+        yield call(cartService.removeProductFromCart, action.payload)
         yield put ({
             type: REMOVE_ITEM_FROM_CART_SUCCESS,
             payload: action.payload
         }); 
         yield put ({
             type: LOAD_TOTAL_AMOUNT_FROM_CART_SUCCESS,
-            payload: data
         }); 
     } catch (error) {
         yield put({
