@@ -21,7 +21,7 @@ class Cart extends Component {
 
     render() {
         return (
-            <div className="container p-3">
+            <div className="container p-3 min-h-screen">
                 <h2 className="font-bold text-2xl">Cart</h2>
                 <div className="flex flex-wrap mt-5 -mx-5 items-start">
                     <div className="w-4/6 p-5">
@@ -60,7 +60,7 @@ class Cart extends Component {
                         </tbody>
                     </table>
                     </div>
-                    <div className="w-2/6 p-5 border-2 border-teal-300">
+                    <div className="w-2/6 p-5">
                         <div className="flex justify-between my-3">
                             <span>Totals:</span>
                             <span>${this.props.totalAmount}</span>

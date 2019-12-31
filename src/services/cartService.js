@@ -40,8 +40,19 @@ class cartService extends EventEmitter {
         
     }
 
-    removeProductFromCart = ({item}) => {
-        console.log(item, 'sss');
+    removeProductFromCart = (product) => {
+        var _cartArr = JSON.parse(localStorage.getItem('cart')) || {
+            totalAmount: 0,
+            listProduct: []
+        };
+
+        var _result = _cartArr.listProduct.filter(item => {
+            return item.id !== product.id
+        });        
+        
+        _cartArr.totalAmount -= parseInt(product.price);
+        _cartArr.listProduct = _result;
+        localStorage.setItem('cart', JSON.stringify(_cartArr));
     }
 }
 

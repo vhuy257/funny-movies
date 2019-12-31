@@ -5,19 +5,19 @@ import {
     REMOVE_ITEM_FROM_CART,
     REMOVE_ITEM_FROM_CART_SUCCESS,
     REMOVE_ITEM_FROM_CART_ERROR,
-    LOAD_TOTAL_AMOUNT_FROM_CART_SUCCESS,
+    LOAD_TOTAL_AMOUNT_FROM_CART,
 }
     from "../../actions/cart";
 
 function* removeProductFromCartSagas(action) {
     try {
-        yield call(cartService.removeProductFromCart, action.payload)
+        yield call(cartService.removeProductFromCart, action.payload);
         yield put ({
             type: REMOVE_ITEM_FROM_CART_SUCCESS,
             payload: action.payload
         }); 
         yield put ({
-            type: LOAD_TOTAL_AMOUNT_FROM_CART_SUCCESS,
+            type: LOAD_TOTAL_AMOUNT_FROM_CART,
         }); 
     } catch (error) {
         yield put({
