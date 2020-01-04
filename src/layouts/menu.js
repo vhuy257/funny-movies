@@ -1,6 +1,6 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
-import MenuList from '../data/menu-items';
+import MenuList from '../data/MenuItems';
 
 const Menu = () => {
     return (

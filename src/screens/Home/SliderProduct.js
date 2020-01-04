@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import dataProduct from '../../data/products';
+import dataProduct from '../../data/Products';
 import Item from '../../components/Product/index';
 
 class SliderProduct extends Component {

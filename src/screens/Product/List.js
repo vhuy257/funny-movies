@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ListProducts from '../../data/products';
+import ListProducts from '../../data/Products';
 import Item from '../../components/Product/index';
 import Pagination from "react-js-pagination";
 import 'rc-slider/assets/index.css';
@@ -7,7 +7,7 @@ import 'rc-tooltip/assets/bootstrap.css';
 import Slider  from 'rc-slider';
 import Tooltip from 'rc-tooltip';
 import StarRatings from 'react-star-ratings';
-import dataProduct from '../../data/products';
+
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -19,8 +19,8 @@ class List extends Component {
         this.state = {
           activePage: 1,
           filter: [],
-          ListProducts: dataProduct,
-          temptListProduct: dataProduct,
+          ListProducts: ListProducts,
+          temptListProduct: ListProducts,
         };
     }
     
@@ -49,8 +49,7 @@ class List extends Component {
         );
     }
 
-    handlePageChange (pageNumber) {
-        console.log(`active page is ${pageNumber}`);
+    handlePageChange (pageNumber) {        
         this.setState({activePage: pageNumber});
     }
 
@@ -64,7 +63,7 @@ class List extends Component {
         
         this.setState({
             filter: _arr,
-            ListProducts: dataProduct
+            ListProducts: ListProducts
         });
         
         var temptArr = [];

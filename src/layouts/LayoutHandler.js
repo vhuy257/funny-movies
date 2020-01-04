@@ -43,7 +43,7 @@ class LayoutHandler extends Component {
                 <Route exact path="/cart">
                     <Cart {...this.props}/>
                 </Route>
-                <Route path="/:id" children={<ProductDetail/>}/>
+                <Route path="/product/:id" children={<ProductDetail/>}/>
                 </Switch>
                 <Footer/>
                 <Search />

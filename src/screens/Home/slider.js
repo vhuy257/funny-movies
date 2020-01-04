@@ -1,6 +1,6 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import sliderData from '../../data/slider-items';
+import sliderData from '../../data/SliderItems';
 import Tilt from 'react-tilt';
 
 const SliderLayout = () => {

@@ -43,7 +43,7 @@ class Cart extends Component {
                                 </td>
                                 <td className="border-b px-4 py-2">{item.name}</td>
                                 <td className="border-b px-4 py-2">{item.qty || 1}</td>
-                                <td className="border-b px-4 py-2">{item.price}</td>
+                                <td className="border-b px-4 py-2"><span className="whitespace-no-wrap">$ {item.price}</span></td>
                                 <td className={item.showOptions ? 'border-b px-4 py-2 relative overflow-hidden item-options actived' : 'border-b px-4 py-2 relative overflow-hidden item-options'}>
                                     <button className="delete_cart-item focus:outline-none" onClick={(e) => {this.showConfirm(e)}}></button>
                                     <div className="option-confirm">

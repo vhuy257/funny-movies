@@ -12,7 +12,6 @@ class ProductItem extends Component {
     }
 
     addtoCart(item) {
-        console.log(item);
         this.props.addProductToCart({
             product: item
         });
@@ -28,13 +27,13 @@ class ProductItem extends Component {
                     <img alt={item.name} src={`./images/product/${item.image}`} className="mx-auto" />
                     <div className="my-5">
                         <StarRatings 
-                            starRatedColor="#319795"
+                            starRatedColor="#f6ad55"
                             rating={item.rating || 0}
                             starDimension="16px"
                             starSpacing="2px"
                         />
                     </div>
-                    <Link to={item.name}>
+                    <Link to={`product/${item.id}`}>
                         <h2 className="mt-4 h-8 truncate" alt={item.name}>{item.name}</h2>
                     </Link>
                     <h4 className="font-bold text-teal-600 text-xl">$ {item.price}</h4>
