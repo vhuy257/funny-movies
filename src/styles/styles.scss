@@ -166,3 +166,26 @@ body {
         }
     }
 }
+
+.image-gallery-slides {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    width: 600px;
+    .image-gallery-slide {
+        position: absolute;
+        img {
+            object-fit: cover;
+            width: 600px;
+            height: 300px;
+        }
+    }
+}
+
+.image-gallery-thumbnails-container {
+    width: 600px;
+    button {
+        width: 140px;
+        margin-right: 10px;
+    }
+}
