@@ -67,25 +67,32 @@ const Detail = (props) => {
                         <h3 className="text-2xl text-orange-600 font-bold">
                             $ { product[0].price }
                         </h3>
-                        <div className="list-attribute text-sm my-4">
+                        <div className="list-attribute text-base my-4">
                             <ul>
                                 <li className="my-1">
-                                    <i className="icon-layers"></i> <span className="ml-3">M</span>
+                                    <i className="icon-layers"></i> <span className="ml-3 text-sm font-bold">M</span>
                                 </li>
                                 <li className="my-1">
-                                    <i className="icon-pie-chart"></i> <span className="ml-3">Blue</span>
+                                    <i className="icon-pie-chart"></i> <span className="ml-3 text-sm font-bold">Blue</span>
+                                </li>
+                                <li className="my-1">
+                                    <i className="icon-cursor"></i> <span className="ml-3 text-sm font-bold">Free shipping</span>
                                 </li>
                             </ul>
+                            <p className="mt-2">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat molestias dolorum maiores voluptatibus itaque aspernatur eius non architecto, accusantium maxime iure cum libero placeat tenetur ad sapiente, at voluptatem tempore!
+                            </p>
                         </div>
-                        <div className="quantity">
-                            <input type="text" value="1" className="border px-2 py-1 outline-none w-12 mb-4 text-center"/>
+                        <div className="flex items-center content-center border-t border-gray-200">
+                            <div className="quantity">
+                                <button className="minus outline-none"><i className="icon-minus"></i></button>
+                                <input type="text" value="1" className="border px-2 py-1 outline-none w-12 m-4 text-center"/>
+                                <button className="plus outline-none"><i className="icon-plus"></i></button>
+                            </div>
+                            <button className="add-to-cart bg-red-500 text-white p-4 py-2 ml-2 hover:bg-red-600">
+                                Add to cart
+                            </button>
                         </div>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat molestias dolorum maiores voluptatibus itaque aspernatur eius non architecto, accusantium maxime iure cum libero placeat tenetur ad sapiente, at voluptatem tempore!
-                        </p>
-                        <button className="add-to-cart bg-red-500 text-white p-4 py-2 mt-4 hover:bg-red-600">
-                            Add to cart
-                        </button>
                     </div>
                 </div>
             </div>

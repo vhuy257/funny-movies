@@ -74,7 +74,7 @@ class Header extends Component {
             <div className="bg-teal-600 p-1">
                 <div className="container m-auto pl-3 pr-3 flex justify-between flex-wrap">
                     <div className="w-1/2 py-1">
-                        <span className="text-white">Phone number: (84) 7562 561</span>
+                        <span className="text-white"><i className="icon-phone mr-2"></i>Phone number: (84) 7562 561</span>
                     </div>
                     <div className="w-1/2 text-right text-white">
                         <button  
