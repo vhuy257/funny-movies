@@ -171,21 +171,15 @@ body {
     position: relative;
     overflow: hidden;
     height: 300px;
-    width: 600px;
     .image-gallery-slide {
         position: absolute;
-        img {
-            object-fit: cover;
-            width: 600px;
-            height: 300px;
-        }
     }
 }
 
-.image-gallery-thumbnails-container {
-    width: 600px;
-    button {
-        width: 140px;
-        margin-right: 10px;
+.image-gallery {
+    .image-gallery-left-nav .image-gallery-svg, 
+    .image-gallery-right-nav .image-gallery-svg {
+        height: 60px;
+        width: 30px;
     }
 }
