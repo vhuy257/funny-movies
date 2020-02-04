@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import ListProducts from '../../data/Products';
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -33,6 +33,15 @@ const Detail = (props) => {
     let product = ListProducts.filter(item => {
         return item.id === parseInt(id);
     });
+
+    const [qty, setQty] = useState({value: 1});
+
+    const setQuantity = (newvalue) => {
+        if(!parseInt(newvalue.target.value) > 0) {
+            return false;
+        }
+        setQty({value: parseInt(newvalue.target.value)})
+    }
 
     return (
         <>
@@ -86,7 +95,7 @@ const Detail = (props) => {
                         <div className="flex items-center content-center border-t border-gray-200">
                             <div className="quantity">
                                 <button className="minus outline-none"><i className="icon-minus"></i></button>
-                                <input type="text" value="1" className="border px-2 py-1 outline-none w-12 m-4 text-center"/>
+                                <input type="number" value={qty.value} onChange={(value) => {setQuantity(value)}} className="border px-2 py-1 outline-none w-12 m-4 text-center"/>
                                 <button className="plus outline-none"><i className="icon-plus"></i></button>
                             </div>
                             <button className="add-to-cart bg-red-500 text-white p-4 py-2 ml-2 hover:bg-red-600">
