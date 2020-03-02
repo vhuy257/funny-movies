@@ -7,6 +7,9 @@ import connect from 'react-redux/es/connect/connect';
 import {bindActionCreators} from 'redux';
 import * as cartActions from '../../store/actions/cart';
 
+import Formsy from 'formsy-react';
+import InputText from '../../components/Elements/InputText';
+
 const images = [
     {
       original: 'https://picsum.photos/id/1018/1000/600/',
@@ -35,6 +38,7 @@ class Detail extends Component {
         super(props);
         this.state = {
             qty: 1,
+            activeTab: false,
             product: []
         }
     }
@@ -119,20 +123,25 @@ class Detail extends Component {
                                     </li>
                                 </ul>
                                 <p className="mt-2">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat molestias dolorum maiores voluptatibus itaque aspernatur eius non architecto, accusantium maxime iure cum libero placeat tenetur ad sapiente, at voluptatem tempore!
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                                    Fugiat molestias dolorum maiores voluptatibus itaque aspernatur eius non architecto, 
+                                    accusantium maxime iure cum libero placeat tenetur ad sapiente, at voluptatem tempore!
                                 </p>
                             </div>
                             <div className="flex items-center content-center border-t border-gray-200">
-                                <div className="quantity">
-                                    <button className="minus outline-none" onClick={() => {this.changeQty('minus')}}><i className="icon-minus"></i></button>
-                                    <input type="number" value={this.state.qty} onChange={(value) => {this.setQuantity(value)}} className="border px-2 py-1 outline-none w-12 m-4 text-center"/>
-                                    <button className="plus outline-none" onClick={() => {this.changeQty('plus')}}><i className="icon-plus"></i></button>
-                                </div>
-                                <button 
-                                onClick={() => {this.addtoCart()}}
-                                className="add-to-cart bg-red-500 text-white p-4 py-2 ml-2 hover:bg-red-600">
-                                    Add to cart
-                                </button>
+                                <Formsy onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
+                                    <div className="quantity flex items-center content-center mt-4 mb-4">
+                                        <button className="minus outline-none p-2" onClick={() => {this.changeQty('minus')}}><i className="icon-minus"></i></button>
+                                            <InputText name="title" validations="isNumeric" value={this.state.qty} validationError="This is not a valid number"/>
+                                        <button className="plus outline-none p-2" onClick={() => {this.changeQty('plus')}}><i className="icon-plus"></i></button>
+                                    </div>
+                                    <button 
+                                    type="submit"
+                                    onClick={() => {this.addtoCart()}}
+                                    className="add-to-cart bg-red-500 text-white p-4 py-2 w-48 hover:bg-red-600">
+                                        Add to cart
+                                    </button>
+                                </Formsy>
                             </div>
                         </div>
                     </div>
@@ -140,8 +149,8 @@ class Detail extends Component {
                     <div className="tab-content">
                         <div className="tab-header mt-10 border-b border-gray-200">
                             <ul className="flex">
-                                <li className="p-2 active font-bold text-teal-700">Description</li>
-                                <li className="p-2">Review</li>
+                                <li className="p-2 active font-bold text-teal-700 cursor-pointer">Description</li>
+                                <li className="p-2 cursor-pointer">Review</li>
                             </ul>
                         </div>
                         <div className="tab-content p-2">
@@ -149,7 +158,12 @@ class Detail extends Component {
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem velit dolores ex cum aperiam, sed quae reiciendis vitae cumque aut distinctio dicta laudantium iusto, dolor ipsa fugit officiis aliquam. Doloremque?
                             </div>
                             <div className="review">
-    
+                                <Formsy onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
+                                    <InputText name="title" validations="isEmail" validationError="This is not a valid email" required/>
+                                    <button type="submit" disabled={!this.state.canSubmit}>
+                                        Submit
+                                    </button>
+                                </Formsy>
                             </div>
                         </div>
                     </div>
