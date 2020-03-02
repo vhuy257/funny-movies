@@ -38,7 +38,7 @@ class Detail extends Component {
         super(props);
         this.state = {
             qty: 1,
-            activeTab: false,
+            activeTab: 'desc',
             product: []
         }
     }
@@ -146,18 +146,22 @@ class Detail extends Component {
                         </div>
                     </div>
     
-                    <div className="tab-content">
+                    <div className="description-wrapper">
                         <div className="tab-header mt-10 border-b border-gray-200">
                             <ul className="flex">
-                                <li className="p-2 active font-bold text-teal-700 cursor-pointer">Description</li>
-                                <li className="p-2 cursor-pointer">Review</li>
+                                <li 
+                                onClick={() => {this.setState({activeTab: 'desc'})}}
+                                className={this.state.activeTab === 'desc' ? 'p-2 active font-bold text-teal-700 cursor-pointer' : 'p-2 cursor-pointer'}>Description</li>
+                                <li 
+                                onClick={() => {this.setState({activeTab: 'rev'})}}
+                                className={this.state.activeTab === 'rev' ? 'p-2 active font-bold text-teal-700 cursor-pointer' : 'p-2 cursor-pointer'}>Review</li>
                             </ul>
                         </div>
-                        <div className="tab-content p-2">
-                            <div className="desciption">
+                        <div className="tab-contentwrapper p-2">
+                            <div className={this.state.activeTab === 'desc' ? 'tab-content active' : 'tab-content'}>
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem velit dolores ex cum aperiam, sed quae reiciendis vitae cumque aut distinctio dicta laudantium iusto, dolor ipsa fugit officiis aliquam. Doloremque?
                             </div>
-                            <div className="review">
+                            <div className={this.state.activeTab === 'rev' ? 'tab-content active': 'tab-content'}>
                                 <Formsy onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
                                     <InputText name="title" validations="isEmail" validationError="This is not a valid email" required/>
                                     <button type="submit" disabled={!this.state.canSubmit}>

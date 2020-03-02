@@ -189,3 +189,10 @@ body {
 .image-gallery-thumbnail:focus {
     border: 4px solid $primary-color;
 }
+
+.tab-content {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
