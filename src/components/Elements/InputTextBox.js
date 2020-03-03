@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { withFormsy  } from 'formsy-react';
 
-class InputText extends Component {
+class InputTextBox extends Component {
     constructor(props) {
         super(props);
         this.changeValue = this.changeValue.bind(this);
@@ -22,7 +22,7 @@ class InputText extends Component {
                 <div className="label text-sm font-bold text-gray-700">
                     <label>{this.props.labelName}</label>
                 </div>
-                <input onChange={this.changeValue} type="text" className={this.props.className} value={this.props.value || ''} />
+                <textarea onChange={this.changeValue} type="text" className={this.props.className} value={this.props.value || ''} />
                 <div className="error-message">
                     <span className="text-red-500 text-sm">{errorMessage}</span>
                 </div>
@@ -31,4 +31,4 @@ class InputText extends Component {
     }
 }
 
-export default withFormsy(InputText);
+export default withFormsy(InputTextBox);

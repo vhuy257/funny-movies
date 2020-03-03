@@ -9,6 +9,7 @@ import * as cartActions from '../../store/actions/cart';
 
 import Formsy from 'formsy-react';
 import InputText from '../../components/Elements/InputText';
+import InputTextBox from '../../components/Elements/InputTextBox';
 
 const images = [
     {
@@ -132,7 +133,7 @@ class Detail extends Component {
                                 <Formsy onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
                                     <div className="quantity flex items-center content-center mt-4 mb-4">
                                         <button className="minus outline-none p-2" onClick={() => {this.changeQty('minus')}}><i className="icon-minus"></i></button>
-                                            <InputText name="title" validations="isNumeric" value={this.state.qty} validationError="This is not a valid number"/>
+                                            <InputText name="title" validations="isNumeric" value={this.state.qty} className="p-2 w-12 border-2 text-center" validationError="This is not a valid number"/>
                                         <button className="plus outline-none p-2" onClick={() => {this.changeQty('plus')}}><i className="icon-plus"></i></button>
                                     </div>
                                     <button 
@@ -147,24 +148,41 @@ class Detail extends Component {
                     </div>
     
                     <div className="description-wrapper">
-                        <div className="tab-header mt-10 border-b border-gray-200">
+                        <div className="tab-header mt-10 border-b border-teal-700">
                             <ul className="flex">
                                 <li 
                                 onClick={() => {this.setState({activeTab: 'desc'})}}
-                                className={this.state.activeTab === 'desc' ? 'p-2 active font-bold text-teal-700 cursor-pointer' : 'p-2 cursor-pointer'}>Description</li>
+                                className={this.state.activeTab === 'desc' ? 'p-2 active text-white cursor-pointer bg-teal-700' : 'p-2 cursor-pointer'}>Description</li>
                                 <li 
                                 onClick={() => {this.setState({activeTab: 'rev'})}}
-                                className={this.state.activeTab === 'rev' ? 'p-2 active font-bold text-teal-700 cursor-pointer' : 'p-2 cursor-pointer'}>Review</li>
+                                className={this.state.activeTab === 'rev' ? 'p-2 active text-white bg-teal-700' : 'p-2 cursor-pointer'}>Review</li>
                             </ul>
                         </div>
                         <div className="tab-contentwrapper p-2">
                             <div className={this.state.activeTab === 'desc' ? 'tab-content active' : 'tab-content'}>
+                                <h2 className="text-2xl pt-1 pb-1 head-title">Description</h2>
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem velit dolores ex cum aperiam, sed quae reiciendis vitae cumque aut distinctio dicta laudantium iusto, dolor ipsa fugit officiis aliquam. Doloremque?
                             </div>
                             <div className={this.state.activeTab === 'rev' ? 'tab-content active': 'tab-content'}>
-                                <Formsy onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
-                                    <InputText name="title" validations="isEmail" validationError="This is not a valid email" required/>
-                                    <button type="submit" disabled={!this.state.canSubmit}>
+                                <h2 className="text-2xl pt-1 pb-1 head-title">Review</h2>
+                                <ul>
+                                    <li className="text-sm p-4 m-2">
+                                        <h2 className="user font-bold"><i className="icon icon-user mr-2"></i>abc@gmail.com</h2>
+                                        <div className="description p-4 shadow-lg">
+                                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem velit dolores ex cum aperiam, sed quae reiciendis vitae cumque aut distinctio dicta laudantium iusto, dolor ipsa fugit officiis aliquam. Doloremque?</p>
+                                        </div>
+                                    </li>
+                                    <li className="text-sm p-4 m-2">
+                                        <h2 className="user font-bold"><i className="icon icon-user mr-2"></i>lorem@gmail.com</h2>
+                                        <div className="description p-4 shadow-lg">
+                                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem velit dolores ex cum aperiam, sed quae reiciendis vitae cumque aut distinctio dicta laudantium iusto, dolor ipsa fugit officiis aliquam. Doloremque?</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <Formsy onValidSubmit={this.submit} onValid={this.enableButton} className="form-review mx-auto mt-6 border-t pt-4" onInvalid={this.disableButton}>
+                                    <InputText labelName="Email" name="title" value="Email@gmail.com" validations="isEmail" validationError="This is not a valid email" className="w-full text-sm p-2 mt-2 mb-2 border-2" required/>
+                                    <InputTextBox labelName="Leave a comment" name="title" value="" className="w-full text-sm p-2 mt-2 mb-2 border-2" required/>
+                                    <button type="submit" className="bg-red-500 text-white p-4 rounded-sm py-2 w-full hover:bg-red-600" disabled={!this.state.canSubmit}>
                                         Submit
                                     </button>
                                 </Formsy>

@@ -2,8 +2,12 @@ input {
     border: 1px solid #e2e8f0;
     display: inline-block;
     padding: 5px 10px;
-    text-align: center;
+    text-align: left;
 }
+.form-review {
+    width: 50%;
+}
+
 button:focus {
     outline: none !important;
 }

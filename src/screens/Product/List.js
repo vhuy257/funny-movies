@@ -101,7 +101,7 @@ class List extends Component {
                 </div>
                 <div className="flex container flex-row p-3 mt-5">
                     <div className="sidebar w-1/5 pr-10">
-                        <h2 className="text-2xl">Filter</h2>
+                        <h2 className="text-2xl head-title">Filter</h2>
                         <h2 className="mb-2 font-bold mt-5">
                             Categories
                         </h2>
