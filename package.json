@@ -26,7 +26,7 @@
     "react-with-firebase-auth": "^1.1.0",
     "redux": "^4.0.4",
     "redux-saga": "^1.1.1",
-    "swiper": "^5.1.0",
+    "swiper": "^6.5.1",
     "uuid": "^3.3.3"
   },
   "scripts": {
